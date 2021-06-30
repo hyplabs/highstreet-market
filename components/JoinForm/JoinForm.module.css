@@ -1,0 +1,17 @@
+
+.joinForm {
+    background: url('/images/form_bg.png');
+    background-size: cover;
+}
+
+.joinFormRadio {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    left: 0;
+}
+
+.joinFormRadioImage {
+    width: 84%;
+    max-height: 156px;
+}

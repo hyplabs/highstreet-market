@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,700&display=swap');
+/* Includes tailwind CSS framework */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+* {
+    font-family: 'Red Hat Display';
+}
+
+details > summary {
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details > summary::after {
+    content: url('/icons/plus.svg');
+    @apply ml-0.5;
+}
+
+details[open] > summary::after {
+    content: url('/icons/minus.svg');
+    @apply transform rotate-180 origin-center;
+    position: relative;
+}
+
+summary:active,
+summary:focus,
+summary:focus:active,
+details:active,
+details:focus,
+details:focus:active,
+a:focus,
+a:active {
+    background-image: none;
+    outline: 0;
+    box-shadow: none;
+}
