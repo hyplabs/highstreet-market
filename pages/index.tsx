@@ -52,7 +52,7 @@ export default function Home() {
       />
       <div className='bg-gradient-to-b from-yellow to-beige py-24'>
         <h3 className='text-2xl lg:text-5xl text-center py-12 p-4 font-bold lg:leading-relaxed lg:w-2/3 mx-auto'>
-          HighStreet is the bridge between the Real, Web, and Virtual Worlds
+          HighStreet is the bridge between Virtual Worlds, Real life, and  Web
         </h3>
         <div className='flex lg:flex-row flex-col'>
           <div className='flex-1 text-center'>

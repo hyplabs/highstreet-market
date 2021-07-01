@@ -182,12 +182,12 @@ export default function About() {
 						answer: 'All products come with the original manufacturer’s warranty unless otherwise noted in the product description'
 					},
 					{
-						question: 'Do products come with a warranty?',
-						answer: 'Once redeemed products cannot be refunded from HighStreet, for physical product defects, please contact the Brand/Manufacturer.'
+						question: 'What happens if for unexpected circumstances we are unable to fulfill our physical product for redemptions?',
+						answer: 'An insurance fund is set up built from our transaction fees to specifically address issues like these. It is 100% our fault if our merchants cannot deliver, thus we will refund our users based on their redeemed value and sunset the curves right away'
 					},
 					{
-						question: 'Do products come with a warranty?',
-						answer: 'HighStreet currently does not support the resale of redeemed items on its marketplace.'
+						question: 'When will I receive my product after redeeming?',
+						answer: 'Upon redeeming you will after to KYC to confirm email and address, you will then receive a date for when your product will be shipped'
 					}
 				]}
 			/>
