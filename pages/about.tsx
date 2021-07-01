@@ -17,7 +17,7 @@ export default function About() {
 		<>
 			<Head>
 				<title>HighStreet Market | About</title>
-				<meta name='description' content='Always Authentic, Liquid Whenever'/>
+				<meta name='descri ption' content='Always Authentic, Liquid Whenever'/>
 				<link rel='icon' href='/favicon.ico'/>
 			</Head>
 
