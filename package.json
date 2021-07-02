@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "lint": "git next lint",
-    "prestart": "npm run build"
+    "lint": "git next lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
