@@ -56,7 +56,7 @@ export default function Nav() {
 							</a>
 						))
 					}
-					<Countdown dateTo={'Jan 20, 2022 15:37:25'} />
+					<Countdown dateTo={'July 20, 2021 12:00:00'} />
 				</div>
 				<div>
 					<a
