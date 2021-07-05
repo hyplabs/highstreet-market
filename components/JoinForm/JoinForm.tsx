@@ -16,6 +16,7 @@ const JoinFormCard = ({ inputId, inputName, inputValue, imageSrc, imageAlt, onCl
 	<div className={`flex flex-col rounded-lg  cursor-pointer bg-white ${checked ? 'bg-opacity-70' : 'bg-opacity-25'} w-100px lg:w-full h-160px items-center`} onClick={onClick}>
 		<input className={styles.joinFormRadio} type='radio' id={inputId} name={inputName} value={inputValue} checked={checked}/>
 		<div className='h-100px'>
+			{/* eslint-disable-next-line @next/next/no-img-element */}
 			<img
 				src={imageSrc}
 				alt={imageAlt}
@@ -108,7 +109,7 @@ export default function JoinForm() {
 						I consider myself a...
 					</p>
 					<div className='flex space-x-4 items-center justify-center'>
-						{joinAsTypes.map((props) => <JoinFormCard {...props} />)}
+						{joinAsTypes.map((props) => <JoinFormCard {...props} key={props.inputValue} />)}
 					</div>
 				</div>
 				<button
