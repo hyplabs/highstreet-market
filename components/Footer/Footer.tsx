@@ -57,9 +57,9 @@ export default function Footer ({ showDivider }: { showDivider?: boolean }) {
 							</a>
 						</div>
 						<div>
-							<a href={'https://highstreet-market.gitbook.io/highstreet/'} target={'_blank'} rel={'noreferrer'}>
+							<a href={'https://app.spatial.io/rooms/60ba2a486c51d5094898dacf?share=7703961714007425229'} target={'_blank'} rel={'noreferrer'}>
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src={'/icons/gitbook.svg'} width={48} height={48} className='mx-8 bg-logo text-white p-1 rounded-full' alt={'gitbook'} />
+								<img src={'/icons/spatial.png'} width={48} height={48} className='mx-8 bg-logo text-white p-1 rounded-full' alt={'gitbook'} />
 							</a>
 						</div>
 					</div>
