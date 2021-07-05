@@ -14,7 +14,7 @@ type JoinFormCardProps = {
 
 const JoinFormCard = ({ inputId, inputName, inputValue, imageSrc, imageAlt, onClick, checked, text }: JoinFormCardProps) => (
 	<div className={`flex flex-col rounded-lg  cursor-pointer bg-white ${checked ? 'bg-opacity-70' : 'bg-opacity-25'} w-100px lg:w-full h-160px items-center`} onClick={onClick}>
-		<input className={styles.joinFormRadio} type='radio' id={inputId} name={inputName} value={inputValue} checked={checked}/>
+		<input className={styles.joinFormRadio} type='radio' id={inputId} name={inputName} value={inputValue} checked={checked} readOnly />
 		<div className='h-100px'>
 			{/* eslint-disable-next-line @next/next/no-img-element */}
 			<img
@@ -29,7 +29,7 @@ const JoinFormCard = ({ inputId, inputName, inputValue, imageSrc, imageAlt, onCl
 )
 
 export default function JoinForm() {
-	const [joinAs, setJoinAs] = useState('')
+	const [joinAs, setJoinAs] = useState('creator')
 
 	const joinAsTypes: JoinFormCardProps[] = [
 		{

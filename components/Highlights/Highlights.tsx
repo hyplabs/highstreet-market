@@ -27,7 +27,7 @@ const _renderHighlight = (highlight: HighlightData, index: number) => {
 export default function Highlights ({ data }: { data: HighlightData[] }) {
 	return (
 		<>
-			<WaveDivider color='aqua' flipped={true} waveColor='darkishblue'/>
+			<WaveDivider color='aqua' flipped={true} waveColor='#40BBFE'/>
 			<div className='bg-yellow'>
 				<section className='w-full bg-gradient-to-b from-aqua to-purple rounded-b-xxl' id={'metaverse'}>
 					<div className='container mx-auto text-center pt-24 lg:py-24'>
