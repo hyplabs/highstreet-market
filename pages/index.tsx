@@ -66,7 +66,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <WaveDivider color={'beige'} waveColor='darkishbeige' />
+      <WaveDivider color={'beige'} waveColor='#FCC0B3' />
       <BlogGrid
         feedUrl={'https://medium.com/feed/highstreet-market'}
         itemsPerPage={3}
