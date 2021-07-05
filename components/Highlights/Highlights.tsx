@@ -30,7 +30,7 @@ export default function Highlights ({ data }: { data: HighlightData[] }) {
 			<WaveDivider color={'blue'} flipped={true} />
 			<div className='bg-yellow'>
 				<section className='w-full bg-gradient-to-b from-blue to-purple rounded-b-xxl' id={'metaverse'}>
-					<div className='container mx-auto text-center py-24'>
+					<div className='container mx-auto text-center pt-24 lg:py-24'>
 						<div className='flex flex-col lg:flex-row'>
 							{ data.map((elm, index) => _renderHighlight(elm, index)) }
 						</div>

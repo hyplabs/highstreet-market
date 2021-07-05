@@ -34,6 +34,9 @@ module.exports = {
         'full': '9999px',
         'large': '12px',
         'xxl': '100px',
+      },
+      width: {
+        '66p': '66%'
       }
     }
   },

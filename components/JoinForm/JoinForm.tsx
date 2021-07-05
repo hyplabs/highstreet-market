@@ -5,7 +5,7 @@ export default function JoinForm() {
 	const [joinAs, setJoinAs] = useState('')
 
 	return (
-		<section className={`${styles.joinForm} lg:rounded-3xl md:mx-24 md:my-36`} style={{minHeight: 300}}>
+		<section className={`${styles.joinForm} p-10 lg:p-0 lg:rounded-3xl md:mx-24 md:my-36`} style={{minHeight: 300}}>
 			<h3 className='text-white text-5xl font-bold pt-16 pb-8'>
 				Book Your Tickets
 			</h3>
@@ -54,7 +54,7 @@ export default function JoinForm() {
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img
 								src={'/icons/robot.svg'}
-								className={`w-3/4 lg:w-5/6 ${styles.joinFormRadioImage}`}
+								className={`w-66p lg:w-5/6 ${styles.joinFormRadioImage}`}
 								alt={'enthusiast'}
 							/>
 							<p className='text-white text-xl'>
@@ -66,7 +66,7 @@ export default function JoinForm() {
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img
 								src={'/icons/gamer.svg'}
-								className={`w-3/4 lg:w-5/6 ${styles.joinFormRadioImage}`}
+								className={`w-66p lg:w-5/6 ${styles.joinFormRadioImage}`}
 								alt={'enthusiast'}
 							/>
 							<p className='text-white text-xl'>
@@ -78,7 +78,7 @@ export default function JoinForm() {
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img
 								src={'/icons/enthusiast.svg'}
-								className={`w-3/4 lg:w-5/6 ${styles.joinFormRadioImage}`}
+								className={`w-66p lg:w-5/6 ${styles.joinFormRadioImage}`}
 								alt={'enthusiast'}
 							/>
 							<p className='text-white text-xl'>
