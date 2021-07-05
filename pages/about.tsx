@@ -40,7 +40,7 @@ export default function About() {
 				</div>
 			</div>
 
-			<WaveDivider color={'purpledark'} flipped={true}/>
+			<WaveDivider color={'purpledark'} flipped divide={false} />
 
 			<div className='bg-gradient-to-b from-purpledark to-purple pb-12'>
 				<div className='flex flex-col lg:flex-row p-8 pt-12'>

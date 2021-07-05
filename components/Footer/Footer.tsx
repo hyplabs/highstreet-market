@@ -13,6 +13,7 @@ export default function Footer ({ showDivider }: { showDivider?: boolean }) {
 					color={'purpleultalight'}
 					flipped={true}
 					bgColor={'yellow'}
+					waveColor='#CBB9FF'
 				/>
 			}
 			<footer className='bg-purpleultalight py-12 px-8 flex flex-col lg:flex-row' style={{ minHeight: 100 }}>
