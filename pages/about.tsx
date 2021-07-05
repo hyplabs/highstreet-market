@@ -17,13 +17,13 @@ export default function About() {
 		<>
 			<Head>
 				<title>HighStreet Market | About</title>
-				<meta name='descri ption' content='Always Authentic, Liquid Whenever'/>
+				<meta name='description' content='Always Authentic, Liquid Whenever'/>
 				<link rel='icon' href='/favicon.ico'/>
 			</Head>
 
 			<Nav/>
 
-			<div className='flex flex-row p-8 pt-32 lg:pt-60 lg:p-32 lg:pt-56'>
+			<div className='flex flex-row p-8 pt-32 lg:p-32 lg:pt-56'>
 				<div className='flex-1'>
 					<h3 className='text-3xl lg:text-4xl mb-12 font-bold' style={{ lineHeight: '3.5rem !important' }}>
 						HighStreet believes real life and virtual

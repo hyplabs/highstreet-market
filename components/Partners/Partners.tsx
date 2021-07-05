@@ -25,6 +25,7 @@ export default function Partners ({ data }: { data: Record<string, any>[] }) {
 			<WaveDivider
 				color={'darkblue'}
 				bgColor={'purpleultalight'}
+				waveColor='softpurple'
 			/>
 		</>
 	)

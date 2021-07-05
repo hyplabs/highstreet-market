@@ -1,11 +1,70 @@
 import {useState} from 'react'
 import styles from './JoinForm.module.css'
 
+type JoinFormCardProps = {
+	inputId: string
+	inputName: string
+	inputValue: string
+	imageSrc: string
+	imageAlt: string
+	text: string
+	onClick: () => void
+	checked: boolean
+}
+
+const JoinFormCard = ({ inputId, inputName, inputValue, imageSrc, imageAlt, onClick, checked, text }: JoinFormCardProps) => (
+	<div className={`flex flex-col rounded-lg  cursor-pointer bg-white ${checked ? 'bg-opacity-70' : 'bg-opacity-25'} w-100px lg:w-full h-160px items-center`} onClick={onClick}>
+		<input className={styles.joinFormRadio} type='radio' id={inputId} name={inputName} value={inputValue} checked={checked}/>
+		<div className='h-100px'>
+			<img
+				src={imageSrc}
+				alt={imageAlt}
+			/>
+		</div>
+		<p className='text-white justify-center'>
+			{text}
+		</p>
+	</div>
+)
+
 export default function JoinForm() {
 	const [joinAs, setJoinAs] = useState('')
 
+	const joinAsTypes: JoinFormCardProps[] = [
+		{
+			inputId: 'contractChoice1',
+			inputName: 'creator',
+			inputValue: 'creator',
+			imageSrc: '/icons/robot.svg',
+			imageAlt: 'creator',
+			text: 'Creator',
+			onClick: () => setJoinAs('creator'),
+			checked: joinAs === 'creator',
+		},
+		{
+			inputId: 'contractChoice2',
+			inputName: 'gamer',
+			inputValue: 'gamer',
+			imageSrc: '/icons/gamer.svg',
+			imageAlt: 'gamer',
+			text: 'Gamer',
+			onClick: () => setJoinAs('gamer'),
+			checked: joinAs === 'gamer',
+		},
+		{
+			inputId: 'contractChoice3',
+			inputName: 'enthusiast',
+			inputValue: 'enthusiast',
+			imageSrc: '/icons/enthusiast.svg',
+			imageAlt: 'enthusiast',
+			text: 'Crypto Enthusiast',
+			onClick: () => setJoinAs('enthusiast'),
+			checked: joinAs === 'enthusiast',
+		},
+	]
+
 	return (
-		<section className={`${styles.joinForm} p-10 lg:p-0 lg:rounded-3xl md:mx-24 md:my-36`} style={{minHeight: 300}}>
+		<section className={`${styles.joinForm} p-4 lg:p-0 lg:rounded-3xl md:mx-24 md:my-36`} style={{minHeight: 300}}>
 			<h3 className='text-white text-5xl font-bold pt-16 pb-8'>
 				Book Your Tickets
 			</h3>
@@ -46,45 +105,10 @@ export default function JoinForm() {
 				</select>
 				<div className='container mx-auto w-full md:w-3/4 lg:w-2/3 mt-12'>
 					<p className='text-left text-xl text-white pb-8'>
-						I consider myself ...
+						I consider myself a...
 					</p>
-					<div className='grid grid-cols-3 gap-4'>
-						<div className='border-purple border-2 bg-opacity-20 bg-white cursor-pointer' onClick={() => setJoinAs('creator')}>
-							<input className={styles.joinFormRadio} type='radio' id='contactChoice1' name='contact' value='creator' checked={joinAs === 'creator'}/>
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img
-								src={'/icons/robot.svg'}
-								className={`w-66p lg:w-5/6 ${styles.joinFormRadioImage}`}
-								alt={'enthusiast'}
-							/>
-							<p className='text-white text-xl'>
-								Creator
-							</p>
-						</div>
-						<div className='border-purple border-2 bg-opacity-20 bg-white cursor-pointer' onClick={() => setJoinAs('gamer')}>
-							<input className={styles.joinFormRadio} type='radio' id='contactChoice2' name='gamer' value='gamer' checked={joinAs === 'gamer'}/>
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img
-								src={'/icons/gamer.svg'}
-								className={`w-66p lg:w-5/6 ${styles.joinFormRadioImage}`}
-								alt={'enthusiast'}
-							/>
-							<p className='text-white text-xl'>
-								Gamer
-							</p>
-						</div>
-						<div className='border-purple border-2 bg-opacity-20 bg-white cursor-pointer' onClick={() => setJoinAs('enthusiast')}>
-							<input className={styles.joinFormRadio} type='radio' id='contactChoice3' name='enthusiast' value='enthusiast' checked={joinAs === 'enthusiast'}/>
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img
-								src={'/icons/enthusiast.svg'}
-								className={`w-66p lg:w-5/6 ${styles.joinFormRadioImage}`}
-								alt={'enthusiast'}
-							/>
-							<p className='text-white text-xl'>
-								Crypto Enthusiast
-							</p>
-						</div>
+					<div className='flex space-x-4 items-center justify-center'>
+						{joinAsTypes.map((props) => <JoinFormCard {...props} />)}
 					</div>
 				</div>
 				<button

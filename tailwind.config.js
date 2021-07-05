@@ -9,11 +9,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        pink: '#FFD1FC',
+        pink: '#FFD2FD',
         beige: '#FAD0C6',
+        darkishbeige: '#FCC0B3',
         blue: '#3FBBFE',
+        aqua: '#08F1FF',
         purplelight: '#C6A4F4',
-        purple: '#A541FF',
+        softpurple: '#CBB9FF',
+        purple: '#9A78FF',
+        darkishpurple: '#8861FB',
+        darkishblue: '#40BBFE',
         yellow: '#FFF4B6',
         darkblue: '#5C5C98',
         ultrablue: '#2D19FE',
@@ -36,7 +41,16 @@ module.exports = {
         'xxl': '100px',
       },
       width: {
-        '66p': '66%'
+        '66p': '66%',
+        '100px': '100px',
+        'logo-sm': '25px',
+        'logo-lg': '40px',
+      },
+      height: {
+        '100px': '100px',
+        '160px': '160px',
+        'logo-sm': '33px',
+        'logo-lg': '52.59px',
       }
     }
   },

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Logo from '../../public/images/logo.png'
+import Logo from '../../public/icons/logo.svg'
 import {data as navItems} from './Nav.items.json'
 import {useState} from 'react'
 import Countdown from '../Countdown/Countdown'
@@ -8,10 +8,12 @@ export default function Nav() {
 	const [showMobileNav, setShowMobileNav] = useState(false)
 
 	return (
-		<nav className='absolute w-full flex items-center justify-between flex-wrap'>
-			<div className='flex items-center flex-shrink-0 text-white mr-6 pl-8 lg:pl-16 p-6'>
+		<nav className='absolute w-full flex items-center justify-between flex-wrap pt-4'>
+			<div className='flex items-center flex-shrink-0 text-white mr-6 pl-8 lg:pl-28 p-6'>
 				<a href={'/'}>
-					<Image alt={'logo'} src={Logo} width={72} height={72}/>
+					<div className='lg:w-logo-lg lg:h-logo-lg w-logo-sm h-logo-sm'>
+						<Image alt={'logo'} src={Logo}/>
+					</div>
 				</a>
 			</div>
 			<div className='block lg:hidden'>
@@ -43,14 +45,14 @@ export default function Nav() {
 					)
 				}
 			</div>
-			<div className='w-full block flex-grow hidden lg:flex lg:items-center lg:w-auto'>
+			<div className='w-full flex-grow hidden lg:flex lg:items-center lg:w-auto'>
 				<div className='flex flex-row text-sm lg:flex-grow justify-center'>
 					{
 						navItems.map((item) => (
 							<a
 								key={`nav-item--${item.link}`}
 								href={item.link}
-								className='block pt-4 mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mx-8 text-xl text-ultrablue hover:text-darkblue'
+								className='block pt-4 mt-4 lg:inline-block lg:mt-0 text-teal-200 mx-8 text-xl text-ultrablue hover:text-darkblue'
 							>
 								{item.title}
 							</a>
@@ -61,7 +63,7 @@ export default function Nav() {
 				<div>
 					<a
 						href='#'
-						className='inline-block text-sm px-4 py-2 leading-none rounded-l-3xl text-white mt-4 lg:mt-0 bg-purpledark flex flex-row hover:bg-purple'
+						className='text-sm px-4 py-2 leading-none rounded-l-3xl text-white mt-4 lg:mt-0 bg-purpledark flex flex-row hover:bg-purple'
 					>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
 						<img src={'/icons/metamask.svg'} />

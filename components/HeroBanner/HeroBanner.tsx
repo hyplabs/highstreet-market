@@ -32,7 +32,7 @@ export default function HeroBanner({ smallText, largeText }: { smallText: string
 					</div>
 				</div>
 			</section>
-			<WaveDivider />
+			<WaveDivider waveColor='darkishpurple' />
 		</>
 	)
 }

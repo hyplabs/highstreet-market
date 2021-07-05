@@ -13,13 +13,16 @@
     width: calc(100% + 1.3px);
     height: 148px;
     fill: theme('colors.purple');
-    transform: rotateY(180deg);
 }
 
 .flipped {
-    transform: rotate(180deg) !important;
+    transform: scale(1, -1);
 }
 
-.wave .shape-fill {
+.wave {
     fill: #FFFFFF;
+}
+
+.secondary {
+    fill: #8861FB;
 }

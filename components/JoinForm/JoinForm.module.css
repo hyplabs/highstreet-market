@@ -5,13 +5,16 @@
 }
 
 .joinFormRadio {
-    float: left;
     margin-top: 10px;
-    margin-left: 10px;
-    left: 0;
+    margin-right: 10px;
+    margin-left: auto;
 }
 
 .joinFormRadioImage {
     width: 84%;
     max-height: 156px;
+}
+
+.card {
+    background: #FFFFFF80;
 }
