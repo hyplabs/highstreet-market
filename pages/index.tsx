@@ -35,17 +35,26 @@ export default function Home() {
         data={[
           {
             title: 'Hybrid Products',
-            text: 'We already live our life half online and half in real life. The products on our market are crafted to exist both in physical and virtual form and always come straight from the brands.',
+            text:
+              <>
+                <span className='font-bold'>We already live our life half online and half in real life.</span> The products on our market are crafted to exist both in physical and virtual form and always come straight from the brands.
+              </>,
             iconUrl: '/icons/highlights-1.png'
           },
           {
             title: 'Instant Liquidity',
-            text: 'Never wait for buyers and sellers. Our StreetSmart™ Bonding Curves enable our marketplace to directly buy and sell product tokens at a dynamic fair market value 24/7.',
+            text:
+              <>
+                <span className='font-bold'>Never wait for buyers and sellers.</span> Our StreetSmart™ Bonding Curves enable our marketplace to directly buy and sell product tokens at a dynamic fair market value 24/7.
+              </>,
             iconUrl: '/icons/highlights-2.png'
           },
           {
             title: 'Guaranteed Authenticity',
-            text: 'Goodbye Fakes. Product tokens are linked directly to the brands and creators you love. Products redeemed on HighStreet will always come directly from the source. Fresh out the oven.',
+            text:
+              <>
+                <span className='font-bold'>Goodbye Fakes.</span> Product tokens are linked directly to the brands and creators you love. Products redeemed on HighStreet will always come directly from the source. Fresh out the oven.
+              </>,
             iconUrl: '/icons/highlights-3.png'
           }
         ]}
@@ -66,7 +75,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <WaveDivider color={'beige'} waveColor='#FCC0B3' />
+      <WaveDivider color={'beige'} waveColor='#FCC0B3' waveOffsetClass='right-wave-right' />
       <BlogGrid
         feedUrl={'https://medium.com/feed/highstreet-market'}
         itemsPerPage={3}

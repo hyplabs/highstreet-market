@@ -7,6 +7,7 @@ export type WaveDividerProps = {
 	bgColor?: string
 	waveColor?: string
 	divide?: boolean
+	waveOffsetClass?: string
 }
 
 const defaultProps = {
@@ -15,21 +16,23 @@ const defaultProps = {
 	bgColor: 'white',
 	waveColor: 'purple',
 	divide: true,
+	waveOffsetClass: 'left-wave-middle'
 }
 
 export default function WaveDivider(props: WaveDividerProps = defaultProps) {
-	const { color, flipped, bgColor, waveColor, divide } = { ...defaultProps, ...props }
+	const { color, flipped, bgColor, waveColor, divide, waveOffsetClass } = { ...defaultProps, ...props }
 	const fillColor = theme.extend.colors[color] || color
 
 	return (
-		<div className={`${styles.wave} bg-${bgColor}`}>
+		<div className={`${styles.wave} bg-${bgColor} overflow-x-hidden relative`}>
 			<svg
 				data-name='Layer 1'
 				xmlns='http://www.w3.org/2000/svg'
 				viewBox='0 0 1440 200'
 				preserveAspectRatio='none'
-				className={flipped ? styles.flipped : ''}
+				className={`${flipped ? styles.flipped : ''} absolute lg:w-full w-1440px ${styles.waveItem} ${waveOffsetClass} lg:inset-x-0`}
 				style={{ fill: fillColor }}
+				overflow='hidden'
 			>
 				<path
 					d="M0 0H1440C1440 0 1240.79 111.185 1098.5 121.175C939.455 132.342 861.985 26.4321 702.5 28.634C551.896 30.7134 480.249 130.969 330 121.175C191.83 112.169 0 0 0 0Z"

@@ -26,6 +26,7 @@ export default function Partners ({ data }: { data: Record<string, any>[] }) {
 				color={'darkblue'}
 				bgColor={'purpleultalight'}
 				waveColor='#CBB9FF'
+				waveOffsetClass='right-wave-right'
 			/>
 		</>
 	)

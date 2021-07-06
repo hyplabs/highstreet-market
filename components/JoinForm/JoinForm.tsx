@@ -13,7 +13,7 @@ type JoinFormCardProps = {
 }
 
 const JoinFormCard = ({ inputId, inputName, inputValue, imageSrc, imageAlt, onClick, checked, text }: JoinFormCardProps) => (
-	<div className={`flex flex-col rounded-lg  cursor-pointer bg-white ${checked ? 'bg-opacity-70' : 'bg-opacity-25'} w-100px lg:w-full h-160px items-center`} onClick={onClick}>
+	<div className={`flex flex-col rounded-lg  cursor-pointer bg-white ${checked ? 'bg-opacity-70 font-bold' : 'bg-opacity-25'} w-100px lg:w-full h-160px items-center`} onClick={onClick}>
 		<input className={styles.joinFormRadio} type='radio' id={inputId} name={inputName} value={inputValue} checked={checked} readOnly />
 		<div className='h-100px'>
 			{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -22,7 +22,7 @@ const JoinFormCard = ({ inputId, inputName, inputValue, imageSrc, imageAlt, onCl
 				alt={imageAlt}
 			/>
 		</div>
-		<p className='text-white justify-center'>
+		<p className='text-black justify-center text-button'>
 			{text}
 		</p>
 	</div>
@@ -82,7 +82,7 @@ export default function JoinForm() {
 	}
 
 	const form = (
-		<section className={`${styles.joinForm} p-4 lg:p-0 lg:rounded-3xl md:mx-24 md:my-36`} style={{minHeight: 300}}>
+		<section className={`${styles.joinForm} p-4 lg:p-0 mt-32 rounded-xxl`} style={{minHeight: 300}}>
 			<h3 className='text-white text-5xl font-bold pt-16 pb-8'>
 				Book Your Tickets
 			</h3>
@@ -105,7 +105,7 @@ export default function JoinForm() {
 					style={{minWidth: 300}}
 					onChange={(e) => setDevice(e.target.value)}
 				>
-					<option selected={true} disabled={true}>
+					<option selected disabled>
 						Select Device
 					</option>
 					{
@@ -133,7 +133,7 @@ export default function JoinForm() {
 				</div>
 				<button
 					type='submit'
-					className='my-24 px-10 py-4 rounded-xl text-white bg-gradient-to-b from-purplelight to-purple'
+					className='my-24 px-10 py-4 rounded-xl text-white bg-gradient-to-b from-purple to-darkishpurple'
 					onClick={(e) => {
 						e.preventDefault()
 						joinSubmit({ email, device, joinAs })
