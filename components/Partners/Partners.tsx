@@ -9,7 +9,7 @@ export default function Partners ({ data }: { data: Record<string, any>[] }) {
 				</h3>
 				<p className='font-light text-2xl pt-8 text-white text-center'>
 					{/* eslint-disable-next-line react/no-unescaped-entities */}
-					It's only right we have assembled a bridge of transitional and crypto investors
+					It's only right we have assembled a bridge of traditional and crypto investors
 				</p>
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-12 container mx-auto mt-24">
 					{
