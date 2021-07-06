@@ -1,4 +1,4 @@
-import WaveDivider from '../WaveDivider/WaveDivider'
+import WaveDivider, { WaveStyle } from '../WaveDivider/WaveDivider'
 import Button, { ButtonType } from '../Button/Button'
 
 export default function HeroBanner({ smallText, largeText }: { smallText: string, largeText: string }) {
@@ -31,7 +31,7 @@ export default function HeroBanner({ smallText, largeText }: { smallText: string
 					</div>
 				</div>
 			</section>
-			<WaveDivider waveColor='#8861FB' waveOffsetClass='left-wave-left' />
+			<WaveDivider waveColor='#8861FB' color='purple' waveOffsetClass='left-wave-left' waveStyle={WaveStyle.LG} />
 		</>
 	)
 }

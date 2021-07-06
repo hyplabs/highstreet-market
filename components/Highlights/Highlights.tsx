@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import styles from './Highlights.module.css'
 import JoinForm from '../JoinForm/JoinForm'
-import WaveDivider from '../WaveDivider/WaveDivider'
+import WaveDivider, { WaveStyle } from '../WaveDivider/WaveDivider'
 import Button, { ButtonType } from '../Button/Button'
 
 export type HighlightData = {
@@ -28,7 +28,7 @@ const _renderHighlight = (highlight: HighlightData, index: number) => {
 export default function Highlights ({ data }: { data: HighlightData[] }) {
 	return (
 		<>
-			<WaveDivider color='aqua' flipped={true} waveColor='#40BBFE'/>
+			<WaveDivider color='aqua' waveColor='#40BBFE' waveStyle={WaveStyle.MD} />
 			<div className='bg-yellow'>
 				<section className='w-full bg-gradient-to-b from-aqua via-darkishblue to-darkishpurple rounded-b-xxl' id={'metaverse'}>
 					<div className='container mx-auto text-center pt-24 lg:py-24'>

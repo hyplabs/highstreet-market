@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTelegram, faFacebook, faTwitter, faDiscord, faGithub, faYoutube, faMedium, IconDefinition } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
 import Logo from '../../public/icons/logo.svg'
-import WaveDivider from "../WaveDivider/WaveDivider";
+import WaveDivider, { WaveStyle } from "../WaveDivider/WaveDivider";
 
 type IconProps = {
 	icon?: IconDefinition
@@ -25,8 +25,12 @@ const Icon = ({ icon, imgSrc, href }: IconProps) => {
 	)
 }
 
+type FooterProps = {
+	waveBgColor: string
+}
 
-export default function Footer ({ showDivider }: { showDivider?: boolean }) {
+
+export default function Footer ({ waveBgColor }: FooterProps) {
 	const icons = [
 		{
 			href: 'https://www.facebook.com/highstreetmkt',
@@ -64,15 +68,14 @@ export default function Footer ({ showDivider }: { showDivider?: boolean }) {
 
 	return (
 		<>
-			{
-				showDivider && <WaveDivider
-					color={'purpleultalight'}
-					flipped={true}
-					bgColor={'yellow'}
-					waveColor='#CBB9FF'
-				/>
-			}
-			<footer className='bg-purpleultalight py-12 px-4 flex flex-col lg:flex-row lg:items-center' style={{ minHeight: 300 }}>
+			<WaveDivider
+				color='purpleultalight'
+				bgColor={waveBgColor}
+				waveColor='#CBB9FF'
+				waveStyle={WaveStyle.XS}
+				waveOffsetClass='left-wave-left'
+			/>
+			<footer className='bg-purpleultalight px-4 flex flex-col lg:flex-row lg:items-center' style={{ minHeight: 300 }}>
 				<div className='w-72 ml-2 lg:ml-20 lg:mr-10 lg:-mt-28'>
 					<div className='flex items-center flex-shrink-0 text-white mr-6 w-footer-logo-sm h-footer-logo-sm lg:w-footer-logo-lg lg:h-footer-logo-lg'>
 						<Image alt={'logo'} src={Logo} />

@@ -7,7 +7,7 @@ import VideoSection from '../components/VideoSection/VideoSection'
 import Highlights from '../components/Highlights/Highlights'
 import Partners from '../components/Partners/Partners'
 import BlogGrid from '../components/BlogGrid/BlogGrid'
-import WaveDivider from '../components/WaveDivider/WaveDivider'
+import WaveDivider, { WaveStyle } from '../components/WaveDivider/WaveDivider'
 
 import VR1 from '../public/images/vr-1.png'
 import VR2 from '../public/images/vr-2.png'
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <WaveDivider color={'beige'} waveColor='#FCC0B3' waveOffsetClass='right-wave-right' />
+      <WaveDivider color='beige' waveColor='#FCC0B3' waveOffsetClass='right-wave-right' waveStyle={WaveStyle.SM} />
       <BlogGrid
         feedUrl={'https://medium.com/feed/highstreet-market'}
         itemsPerPage={3}
@@ -120,7 +120,7 @@ export default function Home() {
           }
         ]}
       />
-      <Footer />
+      <Footer waveBgColor='darkblue' />
     </div>
   )
 }

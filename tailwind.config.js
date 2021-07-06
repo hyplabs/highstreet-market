@@ -61,6 +61,7 @@ module.exports = {
         'footer-logo-lg': '117px',
         'logo-sm': '33px',
         'logo-lg': '52.59px',
+        'wave': '148px',
       },
       fontSize: {
         button: ['18px', '23.81px'],
@@ -78,6 +79,7 @@ module.exports = {
         'wave-middle': 'min(0px, calc((100% - 1440px) / 2))',
         'wave-left': 'min(0px, calc((175% - 1440px) / 2))',
         'wave-right': 'min(0px, calc((175% - 1440px) / 2))',
+        'wave-right2': 'min(0px, calc(1440px - 100%))',
       },
     }
   },

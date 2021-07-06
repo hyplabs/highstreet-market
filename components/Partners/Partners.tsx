@@ -1,5 +1,3 @@
-import WaveDivider from '../WaveDivider/WaveDivider'
-
 export default function Partners ({ data }: { data: Record<string, any>[] }) {
 	return (
 		<>
@@ -22,12 +20,6 @@ export default function Partners ({ data }: { data: Record<string, any>[] }) {
 					}
 				</div>
 			</section>
-			<WaveDivider
-				color={'darkblue'}
-				bgColor={'purpleultalight'}
-				waveColor='#CBB9FF'
-				waveOffsetClass='right-wave-right'
-			/>
 		</>
 	)
 }

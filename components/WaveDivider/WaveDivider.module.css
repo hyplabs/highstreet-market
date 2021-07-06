@@ -9,12 +9,6 @@
 
 }
 
-/* @media (max-width: 1024px) {
-    .waveItem {
-        left: min(0px, calc((175% - 1440px) / 2));
-    }
-} */
-
 .flipped {
     transform: scale(1, -1);
 }

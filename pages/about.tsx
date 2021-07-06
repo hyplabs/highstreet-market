@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Nav from '../components/Nav/Nav'
 import FAQ from '../components/FAQ/FAQ'
-import WaveDivider from '../components/WaveDivider/WaveDivider'
+import WaveDivider, { WaveStyle } from '../components/WaveDivider/WaveDivider'
 
 import HowImage1 from '../public/images/how-1.png'
 import HowImage2 from '../public/images/how-2.png'
@@ -40,10 +40,10 @@ export default function About() {
 				</div>
 			</div>
 
-			<WaveDivider color={'purpledark'} flipped divide={false} />
+			<WaveDivider color={'purpledark'} waveStyle={WaveStyle.NO_LAYER} waveOffsetClass='right-wave-right2' />
 
 			<div className='bg-gradient-to-b from-purpledark to-purple pb-12'>
-				<div className='flex flex-col lg:flex-row p-8 pt-12'>
+				<div className='flex flex-col lg:flex-row p-8 pt-0'>
 					<div className='w-0 lg:w-1/3'>
 						<Image src={Bubble2Image} />
 					</div>
@@ -191,7 +191,7 @@ export default function About() {
 				]}
 			/>
 
-			<Footer showDivider={true} />
+			<Footer waveBgColor='yellow' />
 		</>
 	)
 }
