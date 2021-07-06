@@ -84,7 +84,7 @@ export default function JoinForm() {
 	const form = (
 		<section className={`${styles.joinForm} p-4 lg:p-0 mt-32 rounded-xxl`} style={{minHeight: 300}}>
 			<h3 className='text-white text-5xl font-bold pt-16 pb-8'>
-				Book Your Tickets
+				Start Your Journey
 			</h3>
 			<p className='text-white text-2xl pb-6'>
 				Join our community and stay tuned for when you can be among the first to journey to the HighStreet Metaverse
@@ -106,7 +106,7 @@ export default function JoinForm() {
 					onChange={(e) => setDevice(e.target.value)}
 				>
 					<option selected disabled>
-						Select Device
+						Choose your VR Device
 					</option>
 					{
 						[
@@ -115,7 +115,9 @@ export default function JoinForm() {
 							'Oculus Rift/RiftS',
 							'Oculus Quest with PC',
 							'Valve Index',
-							'Other PCVR device'
+							'Other PCVR device',
+							'I do not have a VR device yet',
+							'I only want to buy products on web'
 						].map((device, index) => (
 							<option key={`device-select-${index}`} value={device}>
 								{device}
@@ -147,7 +149,7 @@ export default function JoinForm() {
 
 	const thankYou = (
 		<section className={`${styles.joinForm} p-4 lg:p-0 lg:rounded-3xl md:mx-24 md:my-36`}>
-			<h3 className='text-white text-5xl font-bold' style={{ padding: 250 }}>
+			<h3 className='text-white text-5xl font-bold' style={{ paddingTop: 250, paddingBottom: 250 }}>
 				Thank you for joining!
 			</h3>
 		</section>

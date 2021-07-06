@@ -90,7 +90,7 @@ export default function About() {
 								src={HowImage1}
 							/>
 							<p className='text-2xl leading-relaxed'>
-								<strong>LOGON</strong> to HighStreet via Web Portal or VR
+								<strong>LOGIN</strong> to HighStreet via Web Portal or VR
 								and load your wallet with $HIGH tokens.
 							</p>
 						</div>
@@ -110,8 +110,7 @@ export default function About() {
 							/>
 							<p className='text-2xl leading-relaxed'>
 								<strong>REDEEM</strong> the token to have the product
-								delivered to you or resell the token back to
-								the market.
+								delivered to you and use in real life.
 							</p>
 						</div>
 					</div>
@@ -160,7 +159,7 @@ export default function About() {
 						the metaverse.
 						<br/><br/>
 						{/* eslint-disable-next-line react/no-unescaped-entities */}
-						So we created the concept of "Proof of Play" (PoP) where we scatter HighStreet mini-games throughout our metaverse and will integrate with established games to offer you the chance to "mine" $HIGH through your performance in these games.
+						So we created the concept of "Proof of Play" (PoP) where simply living and participating in the Metaverse will allow you to earn $HIGH tokens. 
 						<br/><br/>
 						Proof of Work always sounded like homework to us. We would rather Proof of Play.
 					</p>
