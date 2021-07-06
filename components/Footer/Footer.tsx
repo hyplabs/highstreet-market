@@ -35,34 +35,42 @@ export default function Footer ({ waveBgColor }: FooterProps) {
 		{
 			href: 'https://www.facebook.com/highstreetmkt',
 			icon: faFacebook,
+			key: 'facebook',
 		},
 		{
 			href: 'https://t.me/highstreetmarket',
 			icon: faTelegram,
+			key: 'telegram',
 		},
 		{
 			href: 'https://twitter.com/highstreetworld',
 			icon: faTwitter,
+			key: 'twitter',
 		},
 		{
 			href: 'https://medium.com/highstreet-market',
 			icon: faMedium,
+			key: 'medium',
 		},
 		{
 			href: 'https://discord.gg/wxm6JNEbD9',
 			icon: faDiscord,
+			key: 'discord',
 		},
 		{
 			href: 'https://www.youtube.com/channel/UCzXzF5_1RQupiUG0pVGJZmA',
 			icon: faYoutube,
+			key: 'youtube',
 		},
 		{
 			href: 'https://github.com/TravisBuilds/HighStreet',
 			icon: faGithub,
+			key: 'github',
 		},
 		{
 			href: 'https://app.spatial.io/rooms/60ba2a486c51d5094898dacf?share=7703961714007425229',
 			imgSrc: '/icons/spatial.png',
+			key: 'spatial',
 		}
 	]
 
@@ -83,7 +91,7 @@ export default function Footer ({ waveBgColor }: FooterProps) {
 				</div>
 				<div>
 					<div className='flex-1 pt-12 lg:py-0 grid lg:grid-cols-8 grid-cols-4 gap-y-8'>
-						{icons.map((props) => <Icon {...props} />)}
+						{icons.map((props) => <Icon {...props} key={props.key} />)}
 					</div>
 
 					<div className='mt-8 ml-4 text-lightgrey text-hs-2sm lg:text-hs-2lg'>
