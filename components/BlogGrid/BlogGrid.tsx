@@ -31,7 +31,7 @@ export default function BlogGrid(props: BlogGridProps) {
 			.then((res) => res.json())
 			.then((data) => setCurrentData(data.items.map(({ title, pubDate, link, thumbnail }: Record<string, any>) => ({
 				title: decodeURI(title),
-				date: pubDate,
+				date: pubDate.replace(/-/g, '/'), // YYYY-MM-DD HH:MM:SS format is not supported on Safari, changed it to YYYY/MM/DD HH:MM:SS
 				link,
 				thumbnail,
 			}))))
