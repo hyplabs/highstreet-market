@@ -38,19 +38,19 @@ export default function BlogGrid(props: BlogGridProps) {
 	}, [rssUrl])
 
 	return (
-		<section className='p-12'>
-			<h3 className='font-medium text-5xl text-center py-10 pb-16'>
+		<section className='p-12 px-8'>
+			<h3 className='font-medium text-hs-3xl lg:text-hs-6xl lg:pl-16 text-center py-10 pb-16'>
 				Word on The Street
 			</h3>
 			<div className='grid grid-cols-1 md:grid-cols-3 gap-12 container mx-auto'>
 				{
 					currentData.slice((currentPage - 1) * props.itemsPerPage, currentPage * props.itemsPerPage).map((item, index) => (
-						<div key={`blog-item-${index}`} className='bg-pink rounded-xl pl-4 border-2 border-purple' style={{ minHeight: 228 }}>
-							<p className='p-4'>
+						<div key={`blog-item-${index}`} className='bg-pink rounded-xl pl-4 border border-softviolet shadow-lg' style={{ minHeight: 228 }}>
+							<p className='p-4 pl-0 text-hs-sm'>
 								{ new Date(item.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }
 							</p>
-							<hr className='border-b-2 border-purple' />
-							<h4 className='p-4 text-3xl pr-8'>
+							<hr className='border-b-1 border-softviolet' />
+							<h4 className='p-4 pl-0 text-hs-large lg:text-hs-xl'>
 								<a href={item.link || '#'} target={'_blank'} rel={'noreferrer'}>
 									{ item.title }
 								</a>

@@ -1,26 +1,16 @@
 .wave {
-    /*position: absolute;*/
-    top: 0;
-    left: 0;
-    width: 100%;
     overflow: hidden;
     line-height: 0;
+    height: 148px;
 }
 
-.wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
+.waveItem {
     height: 148px;
-    fill: theme('colors.purple');
+
 }
 
 .flipped {
     transform: scale(1, -1);
-}
-
-.wave {
-    fill: #FFFFFF;
 }
 
 .secondary {

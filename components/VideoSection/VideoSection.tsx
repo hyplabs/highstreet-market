@@ -22,10 +22,10 @@ export default function VideoSection(props: VideoSectionProps) {
 		<>
 			<section className='w-full md:px-10 md:py-32 text-center'>
 				<div className='md:container mx-auto flex flex-col text-center'>
-					<h3 className='font-medium text-5xl md:px-0 px-8'>
+					<h3 className='font-medium text-hs-3xl lg:text-hs-4xl md:px-0 px-4'>
 						{filledProps.sectionTitle}
 					</h3>
-					<p className='font-light text-2xl pt-4 max-w-3xl mx-auto my-8 md:px-0 px-8'>
+					<p className='font-light text-hs-md lg:text-hs-lg pt-4 max-w-3xl mx-auto mt-4 mb-8 md:px-0 px-4'>
 						{filledProps.sectionSubtitle}
 					</p>
 					<div className='w-full'>
