@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb'
 
-const MONGODB_URI = process.env.MONGODB_URI
-const MONGODB_DB = process.env.MONGODB_DB || 'market'
+const MONGODB_URI = process.env.MONGO_URL
+const MONGODB_DB = process.env.MONGO_DBNAME
 
 if (!MONGODB_URI) {
   throw new Error(

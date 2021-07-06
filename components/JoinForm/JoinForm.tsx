@@ -30,6 +30,9 @@ const JoinFormCard = ({ inputId, inputName, inputValue, imageSrc, imageAlt, onCl
 
 export default function JoinForm() {
 	const [joinAs, setJoinAs] = useState('creator')
+	const [email, setEmail] = useState('')
+	const [device, setDevice] = useState('')
+	const [showThankYou, setShowThankYou] = useState(false);
 
 	const joinAsTypes: JoinFormCardProps[] = [
 		{
@@ -64,7 +67,21 @@ export default function JoinForm() {
 		},
 	]
 
-	return (
+	const joinSubmit = (data: any) => {
+		fetch('/api/community', {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+				'content-type': 'application/json'
+			}
+		})
+			.then((res) => res.json())
+			.then(() => {
+				setShowThankYou(true);
+			});
+	}
+
+	const form = (
 		<section className={`${styles.joinForm} p-4 lg:p-0 lg:rounded-3xl md:mx-24 md:my-36`} style={{minHeight: 300}}>
 			<h3 className='text-white text-5xl font-bold pt-16 pb-8'>
 				Book Your Tickets
@@ -79,12 +96,14 @@ export default function JoinForm() {
 					type='email'
 					placeholder='me@example.com'
 					style={{minWidth: 300}}
+					onChange={(e) => setEmail(e.target.value)}
 				/>
 				<select
 					className='mx-auto w-full md:w-3/4 lg:w-2/3 block appearance-none bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
 					id='device'
 					placeholder='Device'
 					style={{minWidth: 300}}
+					onChange={(e) => setDevice(e.target.value)}
 				>
 					<option selected={true} disabled={true}>
 						Select Device
@@ -115,10 +134,24 @@ export default function JoinForm() {
 				<button
 					type='submit'
 					className='my-24 px-10 py-4 rounded-xl text-white bg-gradient-to-b from-purplelight to-purple'
+					onClick={(e) => {
+						e.preventDefault()
+						joinSubmit({ email, device, joinAs })
+					}}
 				>
 					Join Our Alpha
 				</button>
 			</form>
 		</section>
 	)
+
+	const thankYou = (
+		<section className={`${styles.joinForm} p-4 lg:p-0 lg:rounded-3xl md:mx-24 md:my-36`}>
+			<h3 className='text-white text-5xl font-bold' style={{ paddingTop: 250, paddingBottom: 250 }}>
+				Thank you for joining!
+			</h3>
+		</section>
+	);
+
+	return showThankYou ? thankYou : form;
 }
