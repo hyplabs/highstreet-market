@@ -5,10 +5,14 @@ export default async function handler(req, res) {
   const communityUsers = db.collection('communityUsers');
 
   switch (req.method) {
+    case 'GET':
+      const users = await communityUsers.find({}).toArray();
+      res.send(users);
+      break;
     case 'POST':
-      const { email, device, role } = req.body;
+      const { email, device, joinAs } = req.body;
       try {
-        await communityUsers.insertOne({ email, device, role });
+        await communityUsers.insertOne({ email, device, joinAs });
       } catch (e) {
         console.log(e);
         res.status(500).send({ status: 'ERR', msg: 'Error saving record' });
