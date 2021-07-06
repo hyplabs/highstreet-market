@@ -22,7 +22,7 @@ const JoinFormCard = ({ inputId, inputName, inputValue, imageSrc, imageAlt, onCl
 				alt={imageAlt}
 			/>
 		</div>
-		<p className='text-black justify-center text-button'>
+		<p className='text-black justify-center text-hs-button'>
 			{text}
 		</p>
 	</div>
@@ -83,50 +83,52 @@ export default function JoinForm() {
 
 	const form = (
 		<section className={`${styles.joinForm} p-4 lg:p-0 mt-32 rounded-xxl`} style={{minHeight: 300}}>
-			<h3 className='text-white text-5xl font-bold pt-16 pb-8'>
+			<h3 className='text-white text-hs-2xl lg:text-hs-5xl font-bold pt-16 pb-8 text-center lg:text-left lg:pl-16'>
 				Start Your Journey
 			</h3>
-			<p className='text-white text-2xl pb-6'>
+			<p className='text-white pb-6 pl-2 text-left text-hs-lg lg:pl-16 lg:text-hs-2large' style={{ maxWidth: '807px' }}>
 				Join our community and stay tuned for when you can be among the first to journey to the HighStreet Metaverse
 			</p>
 			<form id={'join-metaverse-form'}>
-				<input
-					className='mx-auto w-full md:w-3/4 lg:w-2/3 bg-gray-200 appearance-none border-2 border-gray-200 rounded my-12 py-3 px-4 pr-8 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple'
-					id='email'
-					type='email'
-					placeholder='me@example.com'
-					style={{minWidth: 300}}
-					onChange={(e) => setEmail(e.target.value)}
-				/>
-				<select
-					className='mx-auto w-full md:w-3/4 lg:w-2/3 block appearance-none bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
-					id='device'
-					placeholder='Device'
-					style={{minWidth: 300}}
-					onChange={(e) => setDevice(e.target.value)}
-				>
-					<option selected disabled>
-						Choose your VR Device
-					</option>
-					{
-						[
-							'HTC Vive/VivePro/VivePro2',
-							'Windows Mixed Reality',
-							'Oculus Rift/RiftS',
-							'Oculus Quest with PC',
-							'Valve Index',
-							'Other PCVR device',
-							'I do not have a VR device yet',
-							'I only want to buy products on web'
-						].map((device, index) => (
-							<option key={`device-select-${index}`} value={device}>
-								{device}
-							</option>
-						))
-					}
-				</select>
-				<div className='container mx-auto w-full md:w-3/4 lg:w-2/3 mt-12'>
-					<p className='text-left text-xl text-white pb-8'>
+				<div className='px-2 lg:px-0'>
+					<input
+						className='text-hs-button mx-auto w-full md:w-3/4 lg:w-2/3 bg-gray-200 appearance-none border-2 border-gray-200 rounded mt-12 mb-6 py-3 px-4 pr-8 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple'
+						id='email'
+						type='email'
+						placeholder='me@example.com'
+						style={{minWidth: 300}}
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					<select
+						className='text-hs-button mx-auto w-full md:w-3/4 lg:w-2/3 block appearance-none bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+						id='device'
+						placeholder='Device'
+						style={{minWidth: 300}}
+						onChange={(e) => setDevice(e.target.value)}
+					>
+						<option selected disabled>
+							Choose your VR Device
+						</option>
+						{
+							[
+								'HTC Vive/VivePro/VivePro2',
+								'Windows Mixed Reality',
+								'Oculus Rift/RiftS',
+								'Oculus Quest with PC',
+								'Valve Index',
+								'Other PCVR device',
+								'I do not have a VR device yet',
+								'I only want to buy products on web'
+							].map((device, index) => (
+								<option key={`device-select-${index}`} value={device}>
+									{device}
+								</option>
+							))
+						}
+					</select>
+				</div>
+				<div className='container mx-auto w-full md:w-3/4 lg:w-2/3 mt-12 px-2 lg:px-0'>
+					<p className='text-left text-hs-md lg:text-hs-lg text-white pb-8'>
 						I consider myself a...
 					</p>
 					<div className='flex space-x-4 items-center justify-center'>
@@ -135,11 +137,12 @@ export default function JoinForm() {
 				</div>
 				<button
 					type='submit'
-					className='my-24 px-10 py-4 rounded-xl text-white bg-gradient-to-b from-purple to-darkishpurple'
+					className='text-hs-button my-24 px-10 py-4 rounded-xl text-white bg-gradient-to-b from-purple to-darkishpurple'
 					onClick={(e) => {
 						e.preventDefault()
 						joinSubmit({ email, device, joinAs })
 					}}
+					style={{ width: '277px' }}
 				>
 					Join Our Alpha
 				</button>

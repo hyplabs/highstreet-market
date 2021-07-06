@@ -52,7 +52,7 @@ export default function Nav() {
 							<a
 								key={`nav-item--${item.link}`}
 								href={item.link}
-								className='block pt-4 mt-4 lg:inline-block lg:mt-0 text-teal-200 mx-8 text-xl text-ultrablue hover:text-darkblue'
+								className='block pt-8 mt-4 lg:inline-block lg:mt-0 text-teal-200 mx-8 text-hs-lg text-ultrablue hover:text-darkblue'
 							>
 								{item.title}
 							</a>
@@ -63,11 +63,12 @@ export default function Nav() {
 				<div>
 					<a
 						href='#'
-						className='text-sm px-4 py-2 leading-none rounded-l-3xl text-white mt-4 lg:mt-0 bg-purpledark flex flex-row hover:bg-purple'
+						className='text-sm px-4 py-2 leading-none rounded-l-full text-white mt-4 lg:mt-0 bg-purpledark flex flex-row hover:bg-purple'
+						style={{ width: '188px', height: '56px' }}
 					>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
 						<img src={'/icons/metamask.svg'} />
-						<p className='mt-3 ml-3 font-bold'>
+						<p className='text-hs-button m-auto'>
 							Connect
 						</p>
 					</a>

@@ -82,11 +82,11 @@ export default function Footer ({ waveBgColor }: FooterProps) {
 					</div>
 				</div>
 				<div>
-					<div className='flex-1 py-12 lg:py-0 grid lg:grid-cols-8 grid-cols-4 gap-y-8'>
+					<div className='flex-1 pt-12 lg:py-0 grid lg:grid-cols-8 grid-cols-4 gap-y-8'>
 						{icons.map((props) => <Icon {...props} />)}
 					</div>
 
-					<div className='mt-8 ml-4 text-lightgrey'>
+					<div className='mt-8 ml-4 text-lightgrey text-hs-2sm lg:text-hs-2lg'>
 						&copy; HighStreet { new Date().getFullYear() }
 					</div>
 				</div>

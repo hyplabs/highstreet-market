@@ -6,7 +6,7 @@ export type FAQItem = {
 export default function FAQ ({ items }: { items: FAQItem[] }) {
 	return (
 		<div className='p-8 lg:p-16 space-y-4 bg-yellow rounded-t-xxl'>
-			<h3 className='text-5xl py-12 leading-relaxed font-bold text-center'>
+			<h3 className='text-hs-3/2xl lg:text-hs-4xl py-12 font-bold text-center'>
 				Frequently Asked Questions
 			</h3>
 			<div>
@@ -14,11 +14,11 @@ export default function FAQ ({ items }: { items: FAQItem[] }) {
 					items.map((item, index) => (
 						<details className='pb-5' key={`faq-items-${index}`}>
 							<summary
-								className='flex justify-between items-center text-summary bg-pink cursor-pointer p-6 text-2xl rounded-2xl border-2 border-opacity-50 border-orange hover:shadow-xl'
+								className='flex justify-between items-center text-summary bg-hs-orangish cursor-pointer p-6 text-hs-lg rounded-2xl border-2 border-opacity-50 border-orange shadow-orange-glow mb-4'
 							>
 								{ item.question }
 							</summary>
-							<p className='text-dark-grayish-blue text-xs text-2xl p-12'>
+							<p className='text-dark-grayish-blue text-hs-lg p-12'>
 								{ item.answer }
 							</p>
 						</details>

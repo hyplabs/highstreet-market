@@ -32,31 +32,31 @@ export default function Countdown({dateTo}: { dateTo: string | Date }) {
 	}, [])
 
 	return (
-		<div className='flex flex-row text-ultrablue font-bold text-3xl text-center px-8'>
-			<span className='px-4'>
+		<div className='flex flex-row text-ultrablue font-bold text-hs-3xl text-center px-8 space-x-4 pt-8'>
+			<span className='flex flex-col space-y-4 items-center justify-center'>
 				<p className='leading-5'>{ countdownValues.days }</p>
-				<small className='text-lg leading-tight'>Days</small>
+				<small className='text-hs-xs leading-tight uppercase'>Days</small>
 			</span>
 			<span style={{ lineHeight: 0.5 }}>
 				:
 			</span>
-			<span className='px-4'>
+			<span className='flex flex-col space-y-4 items-center justify-center'>
 				<p className='leading-5'>{ countdownValues.hours }</p>
-				<small className='text-lg leading-tight'>Hours</small>
+				<small className='text-hs-xs leading-tight uppercase'>Hours</small>
 			</span>
 			<span style={{ lineHeight: 0.5 }}>
 				:
 			</span>
-			<span className='px-4'>
+			<span className='flex flex-col space-y-4 items-center justify-center'>
 				<p className='leading-5'>{ countdownValues.minutes }</p>
-				<small className='text-lg leading-tight'>Minutes</small>
+				<small className='text-hs-xs leading-tight uppercase'>Minutes</small>
 			</span>
 			<span style={{ lineHeight: 0.5 }}>
 				:
 			</span>
-			<span className='px-4'>
+			<span className='flex flex-col space-y-4 items-center justify-center'>
 				<p className='leading-5' style={{ opacity: countdownValues.seconds % 2 ? 1 : 0.99 }}>{ countdownValues.seconds }</p>
-				<small className='text-lg leading-tight'>Seconds</small>
+				<small className='text-hs-xs leading-tight uppercase'>Seconds</small>
 			</span>
 		</div>
 	)

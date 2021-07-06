@@ -28,7 +28,7 @@ export default function Button({ type, text, url, className, newTab, whiteGlow }
 				href={url}
 				className={
 					`w-full flex items-center justify-center py-3
-					text-button font-medium rounded-large md:py-4
+					text-hs-button font-medium rounded-large md:py-4
 					${typesMap[type] || ''} ${className || ''}`
 				}
 				target={newTab ? '_blank' : '_self'}

@@ -10,7 +10,7 @@ export default function HeroBanner({ smallText, largeText }: { smallText: string
 						<p className='text-hs-lg md:text-hs-xl mb-5 font-normal'>
 							{ smallText }
 						</p>
-						<h3 className='text-hs-2xl md:text-hs-3xl md:leading-relaxed font-bold py-1'>
+						<h3 className='text-hs-3xl md:text-hs-6xl md:leading-relaxed font-bold py-1'>
 							{ largeText }
 						</h3>
 						<div className='flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-8 pt-8'>

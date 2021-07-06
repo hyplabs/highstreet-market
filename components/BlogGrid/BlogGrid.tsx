@@ -38,8 +38,8 @@ export default function BlogGrid(props: BlogGridProps) {
 	}, [rssUrl])
 
 	return (
-		<section className='p-12'>
-			<h3 className='font-medium text-5xl text-center py-10 pb-16'>
+		<section className='p-12 px-8'>
+			<h3 className='font-medium text-hs-3xl lg:text-hs-6xl lg:pl-16 text-center py-10 pb-16'>
 				Word on The Street
 			</h3>
 			<div className='grid grid-cols-1 md:grid-cols-3 gap-12 container mx-auto'>
