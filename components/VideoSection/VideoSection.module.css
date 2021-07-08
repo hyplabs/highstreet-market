@@ -1,0 +1,41 @@
+.bubble3 {
+  top: -15%;
+  right: 5%;
+}
+
+.bubble4 {
+  top: 10%;
+  left: max(-30%, -150px);
+}
+
+.bubble5 {
+  bottom: -3%;
+  right: -15%;
+}
+
+.bubble6 {
+  left: 0%;
+  bottom: -17%;
+}
+
+@media (min-width: 1024px) {
+  .bubble3 {
+    top: -10%;
+    right: 13%;
+  }
+
+  .bubble4 {
+    top: 5%;
+    left: 4%;
+  }
+
+  .bubble5 {
+    bottom: 8%;
+    right: 10%;
+  }
+
+  .bubble6 {
+    left: 33.33333%;
+    bottom: -15%;
+  }
+}

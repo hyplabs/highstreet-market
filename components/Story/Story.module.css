@@ -1,0 +1,25 @@
+.bubble2 {
+  top: -280px;
+  left: -30%;
+}
+
+@media (min-width: 500px) {
+  .bubble2 {
+    top: -30%;
+    left: 0%;
+  }
+}
+
+@media (min-width: 768px) {
+  .bubble2 {
+    top: -32%;
+    left: 0%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bubble2 {
+    top: -75%;
+    left: 0%;
+  }
+}

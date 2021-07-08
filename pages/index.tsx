@@ -15,7 +15,7 @@ import VR3 from '../public/images/vr-3.png'
 
 export default function Home() {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Head>
         <title>HighStreet Market</title>
         <meta name="description" content="Always Authentic, Liquid Whenever" />
@@ -60,7 +60,7 @@ export default function Home() {
         ]}
       />
       <div className='bg-gradient-to-b from-yellow to-beige py-24'>
-        <h3 className='text-hs-2xl lg:text-hs-4xl text-center pt-0 lg:py-12 p-4 font-bold lg:leading-relaxed lg:w-2/3 mx-auto'>
+        <h3 className='text-hs-2xl lg:text-hs-4xl text-center pt-0 lg:py-12 p-4 font-bold lg:w-2/3 mx-auto'>
           HighStreet is the bridge between Virtual Worlds, Real life, and  Web
         </h3>
         <div className='flex lg:flex-row flex-col'>

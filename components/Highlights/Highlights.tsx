@@ -15,7 +15,7 @@ const _renderHighlight = (highlight: HighlightData, index: number) => {
 		<div className='flex-1' key={`highlights-${index}`}>
 			{/* eslint-disable-next-line @next/next/no-img-element */}
 			<img src={highlight.iconUrl} className='mx-auto' />
-			<h4 className='text-hs-large lg:text-hs-xl font-bold text-white leading-relaxed'>
+			<h4 className='text-hs-large lg:text-hs-xl font-bold text-white'>
 				{ highlight.title }
 			</h4>
 			<p className='p-4 pb-8 text-hs-2md lg:text-hs-2lg text-white leading-loose'>

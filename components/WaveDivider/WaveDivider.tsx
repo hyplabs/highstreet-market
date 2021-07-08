@@ -56,7 +56,9 @@ export default function WaveDivider(props: WaveDividerProps) {
 	}
 
 	return (
-		<div className={`${styles.wave} bg-${bgColor} overflow-x-hidden relative`}>
+		<div
+			className={`${styles.wave} bg-${bgColor} overflow-x-hidden relative -z-20`}
+		>
 			{getWave()}
 		</div>
 	)

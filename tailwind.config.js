@@ -1,7 +1,6 @@
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
-  important: true,
   theme: {
     fontFamily: {
       display: ['Gilroy', 'sans-serif'],
@@ -57,6 +56,7 @@ module.exports = {
         '56px': '56px',
         '100px': '100px',
         '160px': '160px',
+        '500px': '500px',
         'footer-logo-sm': '85px',
         'footer-logo-lg': '117px',
         'logo-sm': '33px',
@@ -92,6 +92,10 @@ module.exports = {
         'wave-left': 'min(0px, calc((175% - 1440px) / 2))',
         'wave-right': 'min(0px, calc((175% - 1440px) / 2))',
         'wave-right2': 'min(0px, calc(1440px - 100%))',
+      },
+      zIndex: {
+        '-10': '-10',
+        '-20': '-20',
       },
     }
   },

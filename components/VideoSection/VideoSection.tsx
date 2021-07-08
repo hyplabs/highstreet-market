@@ -1,5 +1,10 @@
 import Image from 'next/image'
 import VideoPlaceholderImg from '../../public/images/video-placeholder.png'
+import Bubble3Image from '../../public/icons/bubble-3.svg'
+import Bubble4Image from '../../public/icons/bubble-4.svg'
+import Bubble5Image from '../../public/icons/bubble-5.svg'
+import Bubble6Image from '../../public/icons/bubble-6.svg'
+import styles from './VideoSection.module.css'
 
 export type VideoSectionProps = {
 	sectionTitle: string
@@ -20,8 +25,28 @@ export default function VideoSection(props: VideoSectionProps) {
 
 	return (
 		<>
-			<section className='w-full md:px-10 md:py-32 text-center'>
-				<div className='md:container mx-auto flex flex-col text-center'>
+			<section className='w-full py-8 md:px-10 md:py-32 text-center'>
+				<div className='md:container mx-auto flex flex-col text-center relative'>
+					<div className={`absolute flex -z-10 ${styles.bubble3}`}>
+						<div className='ml-auto w-1/2 lg:w-full'>
+							<Image src={Bubble3Image} />
+						</div>
+					</div>
+					<div className={`absolute -z-10 ${styles.bubble4}`}>
+						<div className='mr-auto w-1/2 lg:w-full'>
+							<Image src={Bubble4Image} />
+						</div>
+					</div>
+					<div className={`absolute -z-10 ${styles.bubble5}`}>
+						<div className='ml-auto w-1/2 lg:w-full'>
+							<Image src={Bubble5Image} />
+						</div>
+					</div>
+					<div className={`absolute -z-10 -bottom-28 left-1/3 ${styles.bubble6}`}>
+						<div className='ml-auto w-1/2 lg:w-full'>
+							<Image src={Bubble6Image} />
+						</div>
+					</div>
 					<h3 className='font-medium text-hs-3xl lg:text-hs-4xl md:px-0 px-4'>
 						{filledProps.sectionTitle}
 					</h3>
