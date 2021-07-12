@@ -50,6 +50,7 @@ module.exports = {
         'logo-lg': '40px',
         'footer-logo-sm': '64px',
         'footer-logo-lg': '88px',
+        '1/2screen': '50vw',
       },
       height: {
         '4px': '4px',

@@ -1,7 +1,6 @@
-import Image from 'next/image'
 import {useEffect, useState} from 'react'
 import BlogGridPaging from './BlogGridPaging'
-import ShareIcon from '../../public/icons/share.svg'
+import ShareButton from '../ShareButton/ShareButton'
 
 export type BlogGridItem = {
 	title: string,
@@ -47,22 +46,17 @@ export default function BlogGrid(props: BlogGridProps) {
 			<div className='grid grid-cols-1 md:grid-cols-3 gap-12 container mx-auto'>
 				{
 					currentData.slice((currentPage - 1) * props.itemsPerPage, currentPage * props.itemsPerPage).map((item, index) => (
-						<div key={`blog-item-${index}`} className='bg-pink rounded-xl pl-4 border border-softviolet shadow-lg relative' style={{ minHeight: 298 }}>
+						<div key={`blog-item-${index}`} className='bg-pink rounded-xl pl-4 border border-softviolet shadow-lg flex flex-col' style={{ minHeight: 298 }}>
 							<p className='p-4 pl-0 text-hs-sm'>
 								{ new Date(item.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }
 							</p>
 							<hr className='border-b-1 border-softviolet' />
-							<h4 className='p-4 pl-0 text-hs-large lg:text-hs-xl'>
+							<h4 className='p-4 pl-0 text-hs-large lg:text-hs-xl flex-1'>
 								<a href={item.link || '#'} target={'_blank'} rel={'noreferrer'}>
 									{ item.title }
 								</a>
 							</h4>
-							<a>
-								<p className='absolute bottom-4 right-4 uppercase flex flex-row space-x-2 text-hs-md text-purple1'>
-									<Image src={ShareIcon} width={14} height={14} alt='Share Icon' />
-									<span>Share</span>
-								</p>
-							</a>
+							<ShareButton shareText={item.title} shareUrl={item.link} className='ml-auto mb-4 text-hs-md text-purple1' />
 						</div>
 					))
 				}
