@@ -62,6 +62,7 @@ module.exports = {
         'logo-sm': '33px',
         'logo-lg': '52.59px',
         'wave': '148px',
+        'fit': 'fit-content',
       },
       fontSize: {
         'hs-button': ['18px', '23.81px'],
