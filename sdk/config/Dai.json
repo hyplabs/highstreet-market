@@ -1,0 +1,11 @@
+{
+  "network": {
+    "rinkebyArbitrum": "0x552444108a2aF6375205f320F196b5D1FEDFaA51",
+    "mainnetArbitrum": "0x0000000000000000000000000000000000000000",
+    "rinkeby": "0xc7ad46e0b8a400bb3c915120d284aafba8fc4735",
+    "mainnet": "0x0000000000000000000000000000000000000000"
+  },
+  "decimals": 18,
+  "name": "Dai Stablecoin",
+  "symbol": "DAI"
+}
