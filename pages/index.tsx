@@ -65,13 +65,13 @@ export default function Home() {
         </h3>
         <div className='flex lg:flex-row flex-col'>
           <div className='flex-1 text-center'>
-            <Image src={VR1} className='mx-auto' />
+            <Image src={VR1} className='mx-auto' alt='VR1' />
           </div>
           <div className='flex-1 text-center'>
-            <Image src={VR2} className='mx-auto' />
+            <Image src={VR2} className='mx-auto' alt='VR2' />
           </div>
           <div className='flex-1 text-center'>
-            <Image src={VR3} className='mx-auto' />
+            <Image src={VR3} className='mx-auto' alt='VR3' />
           </div>
         </div>
       </div>

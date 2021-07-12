@@ -25,7 +25,6 @@ export default function HeroBanner({ smallText, largeText }: { smallText: string
 							width={'100%'}
 							height={'686'}
 							frameBorder="0"
-							allowTransparency={true}
 							style={{ overflow: 'hidden' }}
 						/>
 					</div>

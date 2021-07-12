@@ -59,7 +59,7 @@ export default function BlogGrid(props: BlogGridProps) {
 							</h4>
 							<a>
 								<p className='absolute bottom-4 right-4 uppercase flex flex-row space-x-2 text-hs-md text-purple1'>
-									<Image src={ShareIcon} width={14} height={14} />
+									<Image src={ShareIcon} width={14} height={14} alt='Share Icon' />
 									<span>Share</span>
 								</p>
 							</a>

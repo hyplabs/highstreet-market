@@ -29,22 +29,22 @@ export default function VideoSection(props: VideoSectionProps) {
 				<div className='md:container mx-auto flex flex-col text-center relative'>
 					<div className={`absolute flex -z-10 ${styles.bubble3}`}>
 						<div className='ml-auto w-1/2 lg:w-full'>
-							<Image src={Bubble3Image} />
+							<Image src={Bubble3Image} alt='Bubble Image' />
 						</div>
 					</div>
 					<div className={`absolute -z-10 ${styles.bubble4}`}>
 						<div className='mr-auto w-1/2 lg:w-full'>
-							<Image src={Bubble4Image} />
+							<Image src={Bubble4Image} alt='Bubble Image' />
 						</div>
 					</div>
 					<div className={`absolute -z-10 ${styles.bubble5}`}>
 						<div className='ml-auto w-1/2 lg:w-full'>
-							<Image src={Bubble5Image} />
+							<Image src={Bubble5Image} alt='Bubble Image' />
 						</div>
 					</div>
 					<div className={`absolute -z-10 -bottom-28 left-1/3 ${styles.bubble6}`}>
 						<div className='ml-auto w-1/2 lg:w-full'>
-							<Image src={Bubble6Image} />
+							<Image src={Bubble6Image} alt='Bubble Image' />
 						</div>
 					</div>
 					<h3 className='font-medium text-hs-3xl lg:text-hs-4xl md:px-0 px-4'>

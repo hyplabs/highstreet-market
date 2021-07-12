@@ -29,7 +29,7 @@ export default function Countdown({dateTo}: { dateTo: string | Date }) {
 		}, 1000)
 
 		return () => clearInterval(interval)
-	}, [])
+	}, [dateTo])
 
 	return (
 		<div className='flex flex-row text-ultrablue font-bold text-hs-3xl text-center px-8 space-x-4 pt-8'>

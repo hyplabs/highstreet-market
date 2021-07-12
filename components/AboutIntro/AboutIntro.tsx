@@ -15,7 +15,7 @@ const AboutIntro = () => (
       </p>
     </div>
     <div className='w-0 lg:w-1/3'>
-      <Image src={Bubble1Image} />
+      <Image src={Bubble1Image} alt='Bubble Image' />
     </div>
   </div>
 )

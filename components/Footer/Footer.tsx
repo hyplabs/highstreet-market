@@ -9,9 +9,10 @@ type IconProps = {
 	icon?: IconDefinition
 	imgSrc?: string
 	href: string
+	alt: string
 }
 
-const Icon = ({ icon, imgSrc, href }: IconProps) => {
+const Icon = ({ icon, imgSrc, href, alt }: IconProps) => {
 	const iconProps = { width: 48, height: 48, className: 'mx-2 lg:mx-4 bg-logo text-white p-2 rounded-full' }
 	return (
 		<div>
@@ -19,7 +20,7 @@ const Icon = ({ icon, imgSrc, href }: IconProps) => {
 				{icon
 					? <FontAwesomeIcon icon={icon} {...iconProps} />
 					  // eslint-disable-next-line @next/next/no-img-element
-					: imgSrc && <img src={imgSrc} {...iconProps} />}
+					: imgSrc && <img src={imgSrc} alt={alt} {...iconProps} />}
 			</a>
 		</div>
 	)
@@ -72,7 +73,7 @@ export default function Footer ({ waveBgColor }: FooterProps) {
 			imgSrc: '/icons/spatial.png',
 			key: 'spatial',
 		}
-	]
+	].map((icon) => ({ ...icon, alt: icon.key }))
 
 	return (
 		<>

@@ -8,7 +8,7 @@ const Story = () => (
       <div className={`w-1/3 lg:w-1/2 absolute lg:relative ${styles.bubble2}`}
         style={{ minWidth: '325px' }}
       >
-        <Image src={Bubble2Image} className='lg:absolute' />
+        <Image src={Bubble2Image} className='lg:absolute' alt='Bubble Image' />
       </div>
       <div className='flex-1'>
         <h3 className='text-hs-4xl w-full mb-12 font-bold text-white'>

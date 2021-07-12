@@ -13,6 +13,7 @@ const HowTo = () => (
         <div className='flex-1 px-6 lg:pt-0 pt-12'>
           <Image
             src={HowImage1}
+            alt='How 1'
           />
           <p className='text-hs-lg pt-8'>
             <strong>LOGIN</strong> to HighStreet via Web Portal or VR
@@ -22,6 +23,7 @@ const HowTo = () => (
         <div className='flex-1 px-6 lg:pt-0 pt-12'>
           <Image
             src={HowImage2}
+            alt='How 2'
           />
           <p className='text-hs-lg pt-8'>
             <strong>BUY</strong> product tokens that you can redeem to
@@ -32,6 +34,7 @@ const HowTo = () => (
         <div className='flex-1 px-6 lg:pt-0 pt-12'>
           <Image
             src={HowImage3}
+            alt='How 3'
           />
           <p className='text-hs-lg pt-8'>
             <strong>REDEEM</strong> the token to have the product

@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Logo from '../../public/icons/logo.svg'
-import {data as navItems} from './Nav.items.json'
+import NavItems from './Nav.items.json'
 import {useState} from 'react'
 import Countdown from '../Countdown/Countdown'
 
 export default function Nav() {
 	const [showMobileNav, setShowMobileNav] = useState(false)
+	const { data: navItems } = NavItems
 
 	return (
 		<nav className='absolute w-full flex items-center justify-between flex-wrap pt-4'>
@@ -67,7 +68,7 @@ export default function Nav() {
 						style={{ width: '188px', height: '56px' }}
 					>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img src={'/icons/metamask.svg'} />
+						<img src={'/icons/metamask.svg'} alt='metamask' />
 						<p className='text-hs-button m-auto'>
 							Connect
 						</p>

@@ -45,13 +45,14 @@ export default function About() {
 					<img
 						src={'/images/big-duck-energy.png'}
 						style={{float: 'right', bottom: -10, maxHeight: '768px'}}
+						alt='big duck energy'
 					/>
 				</div>
 			</div>
 
 			<div className='flex flex-col-reverse lg:flex-row p-12 px-8 lg:p24'>
 				<div className='w-full lg:w-1/2 lg:block p-12'>
-					<Image src={ProofOfPlayImg} />
+					<Image src={ProofOfPlayImg} alt='Proof of Play' />
 				</div>
 				<div className='flex-1'>
 					<h3 className='text-hs-3xl lg:text-hs-4xl py-12 font-bold'>
