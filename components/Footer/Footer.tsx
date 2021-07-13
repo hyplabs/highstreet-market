@@ -39,7 +39,7 @@ export default function Footer ({ waveBgColor }: FooterProps) {
 			key: 'facebook',
 		},
 		{
-			href: 'https://t.me/highstreetmarket',
+			href: 'https://t.me/highstreetworld',
 			icon: faTelegram,
 			key: 'telegram',
 		},
