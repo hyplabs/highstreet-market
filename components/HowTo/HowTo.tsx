@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import HowImage1 from '../../public/images/how-1.png'
-import HowImage2 from '../../public/images/how-2.png'
-import HowImage3 from '../../public/images/how-3.png'
+import HowImage1 from 'public/images/how-1.png'
+import HowImage2 from 'public/images/how-2.png'
+import HowImage3 from 'public/images/how-3.png'
 
 const HowTo = () => (
   <div className={'bg-purple1'}>

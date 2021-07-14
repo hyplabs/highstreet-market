@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons'
-import ShareIcon from '../../public/icons/share.svg'
-import Dropdown from '../Dropdown/Dropdown'
+import ShareIcon from 'public/icons/share.svg'
+import Dropdown from 'components/Dropdown/Dropdown'
 
 type IconSize = {
   width: string | number

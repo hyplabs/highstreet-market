@@ -1,17 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import HeroBanner from '../components/HeroBanner/HeroBanner'
-import Footer from '../components/Footer/Footer'
-import Nav from '../components/Nav/Nav'
-import VideoSection from '../components/VideoSection/VideoSection'
-import Highlights from '../components/Highlights/Highlights'
-import Partners from '../components/Partners/Partners'
-import BlogGrid from '../components/BlogGrid/BlogGrid'
-import WaveDivider, { WaveStyle } from '../components/WaveDivider/WaveDivider'
+import HeroBanner from 'components/HeroBanner/HeroBanner'
+import Footer from 'components/Footer/Footer'
+import Nav from 'components/Nav/Nav'
+import VideoSection from 'components/VideoSection/VideoSection'
+import Highlights from 'components/Highlights/Highlights'
+import Partners from 'components/Partners/Partners'
+import BlogGrid from 'components/BlogGrid/BlogGrid'
+import WaveDivider, { WaveStyle } from 'components/WaveDivider/WaveDivider'
 
-import VR1 from '../public/images/vr-1.png'
-import VR2 from '../public/images/vr-2.png'
-import VR3 from '../public/images/vr-3.png'
+import VR1 from 'public/images/vr-1.png'
+import VR2 from 'public/images/vr-2.png'
+import VR3 from 'public/images/vr-3.png'
 
 export default function Home() {
   return (

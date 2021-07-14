@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
+import ShareButton from 'components/ShareButton/ShareButton'
 import BlogGridPaging from './BlogGridPaging'
-import ShareButton from '../ShareButton/ShareButton'
 
 export type BlogGridItem = {
 	title: string,

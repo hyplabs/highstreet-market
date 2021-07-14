@@ -1,5 +1,5 @@
-import WaveDivider, { WaveStyle } from '../WaveDivider/WaveDivider'
-import Button, { ButtonType } from '../Button/Button'
+import WaveDivider, { WaveStyle } from 'components/WaveDivider/WaveDivider'
+import Button, { ButtonType } from 'components/Button/Button'
 
 export default function HeroBanner({ smallText, largeText }: { smallText: string, largeText: string }) {
 	return (

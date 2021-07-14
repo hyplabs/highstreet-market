@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import VideoPlaceholderImg from '../../public/images/video-placeholder.png'
-import Bubble3Image from '../../public/icons/bubble-3.svg'
-import Bubble4Image from '../../public/icons/bubble-4.svg'
-import Bubble5Image from '../../public/icons/bubble-5.svg'
-import Bubble6Image from '../../public/icons/bubble-6.svg'
+import VideoPlaceholderImg from 'public/images/video-placeholder.png'
+import Bubble3Image from 'public/icons/bubble-3.svg'
+import Bubble4Image from 'public/icons/bubble-4.svg'
+import Bubble5Image from 'public/icons/bubble-5.svg'
+import Bubble6Image from 'public/icons/bubble-6.svg'
 import styles from './VideoSection.module.css'
 
 export type VideoSectionProps = {

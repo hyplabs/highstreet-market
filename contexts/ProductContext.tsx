@@ -1,7 +1,7 @@
 import { BigNumber } from 'ethers'
 import { TransactionResponse } from '@ethersproject/providers'
 import { createContext, useContext } from 'react'
-import { Nullable } from '../utils/types'
+import { Nullable } from 'utils/types'
 import Web3Context from './Web3Context'
 import {
   getAvailability,
@@ -15,7 +15,7 @@ import {
   buyWithDai,
   buyWithEth,
   sell,
-} from '../sdk'
+} from 'sdk'
 
 type ProductContextType = {
   productTokenAvailability: (address: string) => Promise<number>

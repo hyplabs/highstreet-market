@@ -1,4 +1,4 @@
-import { theme } from '../../tailwind.config'
+import { theme } from 'tailwind.config'
 import styles from './WaveDivider.module.css'
 import WaveStyleLayerLg from './WaveStyleLayerLg'
 import WaveStyleLayerMd from './WaveStyleLayerMd'

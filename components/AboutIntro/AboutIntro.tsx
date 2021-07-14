@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Bubble1Image from '../../public/icons/bubble-1.svg'
+import Bubble1Image from 'public/icons/bubble-1.svg'
 import styles from './AboutIntro.module.css'
 
 const AboutIntro = () => (

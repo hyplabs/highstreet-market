@@ -1,9 +1,9 @@
-import styles from './Footer.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTelegram, faFacebook, faTwitter, faDiscord, faGithub, faYoutube, faMedium, IconDefinition } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
-import Logo from '../../public/icons/logo.svg'
-import WaveDivider, { WaveStyle } from "../WaveDivider/WaveDivider";
+import Logo from 'public/icons/logo.svg'
+import WaveDivider, { WaveStyle } from "components/WaveDivider/WaveDivider";
+import styles from './Footer.module.css'
 
 type IconProps = {
 	icon?: IconDefinition

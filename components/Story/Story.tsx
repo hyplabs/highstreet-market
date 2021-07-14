@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Bubble2Image from '../../public/icons/bubble-2.svg'
+import Bubble2Image from 'public/icons/bubble-2.svg'
 import styles from './Story.module.css'
 
 const Story = () => (

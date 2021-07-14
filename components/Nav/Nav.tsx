@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import Logo from '../../public/icons/logo.svg'
+import Logo from 'public/icons/logo.svg'
+import Countdown from 'components/Countdown/Countdown'
+import Dropdown from 'components/Dropdown/Dropdown'
 import NavItems from './Nav.items.json'
-import Countdown from '../Countdown/Countdown'
-import Dropdown from '../Dropdown/Dropdown'
 
 export default function Nav() {
 	const { data: navItems } = NavItems

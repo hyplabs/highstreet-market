@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
+import JoinForm from 'components/JoinForm/JoinForm'
+import WaveDivider, { WaveStyle } from 'components/WaveDivider/WaveDivider'
+import Button, { ButtonType } from 'components/Button/Button'
 import styles from './Highlights.module.css'
-import JoinForm from '../JoinForm/JoinForm'
-import WaveDivider, { WaveStyle } from '../WaveDivider/WaveDivider'
-import Button, { ButtonType } from '../Button/Button'
 
 export type HighlightData = {
 	iconUrl: string,

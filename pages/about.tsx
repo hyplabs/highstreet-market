@@ -4,11 +4,11 @@ import Nav from '../components/Nav/Nav'
 import FAQ from '../components/FAQ/FAQ'
 import WaveDivider, { WaveStyle } from '../components/WaveDivider/WaveDivider'
 
-import ProofOfPlayImg from '../public/images/proof-of-play.png'
-import Footer from '../components/Footer/Footer'
-import Story from '../components/Story/Story'
-import AboutIntro from '../components/AboutIntro/AboutIntro'
-import HowTo from '../components/HowTo/HowTo'
+import ProofOfPlayImg from 'public/images/proof-of-play.png'
+import Footer from 'components/Footer/Footer'
+import Story from 'components/Story/Story'
+import AboutIntro from 'components/AboutIntro/AboutIntro'
+import HowTo from 'components/HowTo/HowTo'
 
 export default function About() {
 	return (

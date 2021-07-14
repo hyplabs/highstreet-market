@@ -1,7 +1,7 @@
 import { getDefaultProvider, Signer } from 'ethers'
 import { ExternalProvider, Web3Provider, Provider } from '@ethersproject/providers'
 import { createContext, useCallback, useState } from 'react'
-import { Nullable } from '../utils/types'
+import { Nullable } from 'utils/types'
 
 
 declare global {
