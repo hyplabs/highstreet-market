@@ -2,8 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTelegram, faFacebook, faTwitter, faDiscord, faGithub, faYoutube, faMedium, IconDefinition } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
 import Logo from 'public/icons/logo.svg'
-import WaveDivider, { WaveStyle } from "components/WaveDivider/WaveDivider";
-import styles from './Footer.module.css'
+import WaveDivider, { WaveStyle } from 'components/WaveDivider/WaveDivider'
 
 type IconProps = {
 	icon?: IconDefinition
@@ -13,14 +12,20 @@ type IconProps = {
 }
 
 const Icon = ({ icon, imgSrc, href, alt }: IconProps) => {
-	const iconProps = { width: 48, height: 48, className: 'mx-2 lg:mx-4 bg-logo text-white p-2 rounded-full' }
+	const iconSize = { width: 48, height: 48 }
+	const iconClassName = { className: 'bg-logo text-white p-2 rounded-full' }
+	const iconProps = { ...iconSize, ...iconClassName }
+
 	return (
 		<div>
 			<a href={href} target='_blank' rel='noreferrer'>
 				{icon
 					? <FontAwesomeIcon icon={icon} {...iconProps} />
-					  // eslint-disable-next-line @next/next/no-img-element
-					: imgSrc && <img src={imgSrc} alt={alt} {...iconProps} />}
+					: imgSrc && (
+						<div style={iconSize} {...iconClassName} >
+							<Image src={imgSrc} alt={alt} {...iconSize} />
+						</div>
+				)}
 			</a>
 		</div>
 	)
@@ -29,7 +34,6 @@ const Icon = ({ icon, imgSrc, href, alt }: IconProps) => {
 type FooterProps = {
 	waveBgColor: string
 }
-
 
 export default function Footer ({ waveBgColor }: FooterProps) {
 	const icons = [
@@ -70,7 +74,7 @@ export default function Footer ({ waveBgColor }: FooterProps) {
 		},
 		{
 			href: 'https://app.spatial.io/rooms/60ba2a486c51d5094898dacf?share=7703961714007425229',
-			imgSrc: '/icons/spatial.png',
+			imgSrc: '/icons/spatial.svg',
 			key: 'spatial',
 		}
 	].map((icon) => ({ ...icon, alt: icon.key }))
@@ -91,7 +95,7 @@ export default function Footer ({ waveBgColor }: FooterProps) {
 					</div>
 				</div>
 				<div>
-					<div className='flex-1 pt-12 lg:py-0 grid lg:grid-cols-8 grid-cols-4 gap-y-8'>
+					<div className='flex-1 pt-12 lg:py-0 grid lg:grid-cols-8 lg:gap-x-8 grid-cols-4 gap-y-8'>
 						{icons.map((props) => <Icon {...props} key={props.key} />)}
 					</div>
 

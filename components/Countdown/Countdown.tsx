@@ -1,11 +1,22 @@
 import {useState, useEffect} from 'react'
+import {
+	DAY_IN_MS,
+	HOUR_IN_MS,
+	MIN_IN_MS,
+	SEC_IN_MS,
+} from 'utils/constants'
 
-export default function Countdown({dateTo}: { dateTo: string | Date }) {
+type CountdownProps = {
+	dateTo: string | Date
+	className?: string
+}
+
+export default function Countdown({ dateTo, className }: CountdownProps) {
 	const [countdownValues, setCountdownValues] = useState({
-		days: 0,
-		hours: 0,
-		minutes: 0,
-		seconds: 0,
+		days: '00',
+		hours: '00',
+		minutes: '00',
+		seconds: '00',
 	})
 
 	useEffect(() => {
@@ -15,10 +26,12 @@ export default function Countdown({dateTo}: { dateTo: string | Date }) {
 
 			const diff = countdownDateTo - now
 
-			const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-			const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-			const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
-			const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+			const format = (n: number) => Math.floor(n).toString().padStart(2, '0')
+
+			const days = format(diff / DAY_IN_MS)
+			const hours = format((diff % DAY_IN_MS) / HOUR_IN_MS)
+			const minutes = format((diff % HOUR_IN_MS) / MIN_IN_MS)
+			const seconds = format((diff % MIN_IN_MS) / SEC_IN_MS)
 
 			setCountdownValues({
 				days,
@@ -26,38 +39,50 @@ export default function Countdown({dateTo}: { dateTo: string | Date }) {
 				minutes,
 				seconds,
 			})
-		}, 1000)
+		}, SEC_IN_MS)
 
 		return () => clearInterval(interval)
 	}, [dateTo])
 
 	return (
-		<div className='flex flex-row text-ultrablue font-bold text-hs-3xl text-center px-8 space-x-4 pt-8'>
-			<span className='flex flex-col space-y-4 items-center justify-center'>
-				<p className='leading-5'>{ countdownValues.days }</p>
-				<small className='text-hs-xs leading-tight uppercase'>Days</small>
-			</span>
-			<span style={{ lineHeight: 0.5 }}>
-				:
-			</span>
-			<span className='flex flex-col space-y-4 items-center justify-center'>
-				<p className='leading-5'>{ countdownValues.hours }</p>
-				<small className='text-hs-xs leading-tight uppercase'>Hours</small>
-			</span>
-			<span style={{ lineHeight: 0.5 }}>
-				:
-			</span>
-			<span className='flex flex-col space-y-4 items-center justify-center'>
-				<p className='leading-5'>{ countdownValues.minutes }</p>
-				<small className='text-hs-xs leading-tight uppercase'>Minutes</small>
-			</span>
-			<span style={{ lineHeight: 0.5 }}>
-				:
-			</span>
-			<span className='flex flex-col space-y-4 items-center justify-center'>
-				<p className='leading-5' style={{ opacity: countdownValues.seconds % 2 ? 1 : 0.99 }}>{ countdownValues.seconds }</p>
-				<small className='text-hs-xs leading-tight uppercase'>Seconds</small>
-			</span>
+		<div className={`${className}`}>
+			<div
+				className='flex flex-row text-ultrablue font-bold text-hs-3xl text-center space-x-3'
+			>
+				<div className='w-70px'>
+					<span className='flex flex-col space-y-4 items-center justify-center'>
+						<p className='leading-5'>{ countdownValues.days }</p>
+						<small className='text-hs-xs leading-tight uppercase'>Days</small>
+					</span>
+				</div>
+				<span style={{ lineHeight: 0.5 }}>
+					:
+				</span>
+				<div className='w-70px'>
+					<span className='flex flex-col space-y-4 items-center justify-center'>
+						<p className='leading-5'>{ countdownValues.hours }</p>
+						<small className='text-hs-xs leading-tight uppercase'>Hours</small>
+					</span>
+				</div>
+				<span style={{ lineHeight: 0.5 }}>
+					:
+				</span>
+				<div className='w-70px'>
+					<span className='flex flex-col space-y-4 items-center justify-center'>
+						<p className='leading-5'>{ countdownValues.minutes }</p>
+						<small className='text-hs-xs leading-tight uppercase'>Minutes</small>
+					</span>
+				</div>
+				<span style={{ lineHeight: 0.5 }}>
+					:
+				</span>
+				<div className='w-70px'>
+					<span className='flex flex-col space-y-4 items-center justify-center'>
+						<p className='leading-5'>{ countdownValues.seconds }</p>
+						<small className='text-hs-xs leading-tight uppercase'>Seconds</small>
+					</span>
+				</div>
+			</div>
 		</div>
 	)
 }

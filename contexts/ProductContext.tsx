@@ -15,7 +15,10 @@ import {
   buyWithDai,
   buyWithEth,
   sell,
+  daiBalanceOf,
+  amountInDai,
 } from 'sdk'
+import { formatEther } from 'ethers/lib/utils'
 
 type ProductContextType = {
   productTokenAvailability: (address: string) => Promise<number>
@@ -30,6 +33,11 @@ type ProductContextType = {
   buyTokenWithDai: (address: string, daiAmount: BigNumber, tokenAmount: number) => Promise<Nullable<TransactionResponse>>
   buyTokenWithEth: (address: string, ethAmount: BigNumber, tokenAmount: number) => Promise<Nullable<TransactionResponse>>
   sellToken: (address: string, tokenAmount: number) => Promise<Nullable<TransactionResponse>>
+
+  getEthBalance: (address: string) => Promise<BigNumber>
+  getDaiBalance: (address: string) => Promise<BigNumber>
+  getEthBalanceFormatted: (address: string) => Promise<string>
+  getDaiBalanceFormatted: (address: string) => Promise<string>
 }
 
 const ProductContext = createContext<ProductContextType>({
@@ -45,6 +53,11 @@ const ProductContext = createContext<ProductContextType>({
   buyTokenWithDai: async () => null,
   buyTokenWithEth: async () => null,
   sellToken: async () => null,
+
+  getEthBalance: async () => BigNumber.from(0),
+  getDaiBalance: async () => BigNumber.from(0),
+  getEthBalanceFormatted: async () => '0',
+  getDaiBalanceFormatted: async () => '0',
 })
 
 export const ProductContextProvider: React.FC = ({ children }) => {
@@ -69,6 +82,11 @@ export const ProductContextProvider: React.FC = ({ children }) => {
   const sellToken = async (address: string, tokenAmount: number) =>
     signer ? sell(signer, address, tokenAmount) : null
 
+  const getEthBalance = async (address: string) => provider.getBalance(address)
+  const getDaiBalance = async (address: string) => daiBalanceOf(provider, address)
+  const getEthBalanceFormatted = async (address: string) => formatEther(await getEthBalance(address))
+  const getDaiBalanceFormatted = async (address: string) => amountInDai(await getDaiBalance(address))
+
   return (
     <ProductContext.Provider
       value={{
@@ -84,6 +102,11 @@ export const ProductContextProvider: React.FC = ({ children }) => {
         buyTokenWithDai,
         buyTokenWithEth,
         sellToken,
+
+        getEthBalance,
+        getDaiBalance,
+        getEthBalanceFormatted,
+        getDaiBalanceFormatted,
       }}
     >
       {children}  

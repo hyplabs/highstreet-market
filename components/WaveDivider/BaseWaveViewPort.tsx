@@ -1,13 +1,14 @@
 export type BaseWaveViewPortProps = {
   waveOffsetClass?: string
   height?: number | string
+  viewBox?: string
   fillColor: string
 }
 
-const BaseWaveViewPort: React.FC<BaseWaveViewPortProps> = ({ waveOffsetClass, fillColor, height, children }) => (
+const BaseWaveViewPort: React.FC<BaseWaveViewPortProps> = ({ waveOffsetClass, fillColor, height, viewBox, children }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    viewBox='0 0 1440 200'
+    viewBox={viewBox || '0 0 1440 200'}
     preserveAspectRatio='none'
     className={
       `absolute w-1440px h-wave ${waveOffsetClass}
