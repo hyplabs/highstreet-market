@@ -15,7 +15,7 @@ import VR3 from 'public/images/vr-3.png'
 
 export default function Home() {
   return (
-    <div className='overflow-x-hidden'>
+    <div className='overflow-x-hidden absolute w-full'>
       <Head>
         <title>HighStreet Market</title>
         <meta name="description" content="Always Authentic, Liquid Whenever" />

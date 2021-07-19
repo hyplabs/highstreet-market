@@ -1,8 +1,10 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import { connectToDatabase } from 'utils/db'
+import { CommunityUser } from 'utils/models';
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { db } = await connectToDatabase();
-  const communityUsers = db.collection('communityUsers');
+  const communityUsers = db.collection<CommunityUser>('communityUsers');
 
   switch (req.method) {
     case 'GET':

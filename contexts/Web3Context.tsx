@@ -1,28 +1,27 @@
 import { getDefaultProvider, Signer } from 'ethers'
-import { ExternalProvider, Web3Provider, Provider } from '@ethersproject/providers'
+import { Web3Provider, Provider } from '@ethersproject/providers'
 import { createContext, useCallback, useState } from 'react'
 import { Nullable } from 'utils/types'
-
-
-declare global {
-  interface Window {
-    ethereum?: ExternalProvider
-    web3?: { currentProvider: ExternalProvider }
-  }
-}
+import { ARBITRUM_CHAIN_ID, ARBITRUM_NETWORK_PARAMS, MAINNET_CHAIN_ID } from 'utils/constants'
 
 type Web3ContextType = {
   web3Provider: Nullable<Web3Provider>
   defaultProvider: Provider
   signer: Nullable<Signer>
-  connectWallet: () => Promise<void>
+  connectWallet: () => Promise<Nullable<{ walletAddress: string, signer: Signer }>>
+  getConnectedWallet: () => Promise<Nullable<string>>
+  switchToArbitrum: () => Promise<boolean>
+  switchToMainnet: () => Promise<boolean>
 }
 
 const Web3Context = createContext<Web3ContextType>({
   web3Provider: null,
   defaultProvider: getDefaultProvider(),
   signer: null,
-  connectWallet: async () => {},
+  connectWallet: async () => null,
+  getConnectedWallet: async () => null,
+  switchToArbitrum: async () => false,
+  switchToMainnet: async () => false,
 })
 
 export const Web3ContextProvider: React.FC = ({ children }) => {
@@ -46,12 +45,65 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     try {
       if (web3Provider) {
         const addresses: string[] = await web3Provider.send('eth_requestAccounts', [])
-        setSigner(web3Provider.getSigner(addresses[0]))
+        const walletAddress = addresses[0]
+        const signer = web3Provider.getSigner(walletAddress)
+        setSigner(signer)
+        return { walletAddress, signer }
       } else {
         console.error('No provider')
+        return null
       }
     } catch (e) {
       console.error(e)
+      return null
+    }
+  }, [web3Provider])
+
+  const getConnectedWallet = useCallback(async () => {
+    try {
+      if (web3Provider) {
+        return (await web3Provider.send('eth_accounts', []) as string[])[0] || null
+      } else {
+        return null
+      }
+    } catch (e) {
+      console.error(e)
+      return null
+    }
+  }, [web3Provider])
+
+  const switchToArbitrum = useCallback(async () => {
+    try {
+      if (web3Provider) {
+        await web3Provider.send('wallet_switchEthereumChain', [{ chainId: ARBITRUM_CHAIN_ID }])
+        return true
+      }
+      return false
+    } catch (e) {
+      if ((e as any).code === 4902) {
+        try {
+          await web3Provider?.send('wallet_addEthereumChain', [ARBITRUM_NETWORK_PARAMS])
+          return true
+        } catch (e) {
+          console.error(e)
+          return false
+        }
+      }
+      console.error(e)
+      return false
+    }
+  }, [web3Provider])
+
+  const switchToMainnet = useCallback(async () => {
+    try {
+      if (web3Provider) {
+        await web3Provider.send('wallet_switchEthereumChain', [{ chainId: MAINNET_CHAIN_ID }])
+        return true
+      }
+      return false
+    } catch (e) {
+      console.error(e)
+      return false
     }
   }, [web3Provider])
 
@@ -62,6 +114,9 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
         defaultProvider,
         signer,
         connectWallet,
+        getConnectedWallet,
+        switchToArbitrum,
+        switchToMainnet,
       }}
     >
       {children}

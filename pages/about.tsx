@@ -12,7 +12,7 @@ import HowTo from 'components/HowTo/HowTo'
 
 export default function About() {
 	return (
-		<div className='overflow-x-hidden'>
+		<div className='overflow-x-hidden absolute w-full'>
 			<Head>
 				<title>HighStreet Market | About</title>
 				<meta name='description' content='Always Authentic, Liquid Whenever'/>

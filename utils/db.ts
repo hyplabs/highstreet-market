@@ -5,13 +5,13 @@ const MONGODB_DB = process.env.MONGO_DBNAME
 
 if (!MONGODB_URI) {
   throw new Error(
-    'Please define the MONGODB_URI environment variable inside .env.local'
+    'Please define the MONGO_URL environment variable inside .env.local'
   )
 }
 
 if (!MONGODB_DB) {
   throw new Error(
-    'Please define the MONGODB_DB environment variable inside .env.local'
+    'Please define the MONGO_DBNAME environment variable inside .env.local'
   )
 }
 
@@ -20,11 +20,10 @@ if (!MONGODB_DB) {
  * in development. This prevents connections growing exponentially
  * during API Route usage.
  */
-let cached = global.mongo
-
-if (!cached) {
-  cached = global.mongo = { conn: null, promise: null }
+if (!global.mongo) {
+  global.mongo = { conn: null, promise: null }
 }
+let cached = global.mongo
 
 export async function connectToDatabase() {
   if (cached.conn) {
@@ -37,10 +36,10 @@ export async function connectToDatabase() {
       useUnifiedTopology: true,
     }
 
-    cached.promise = MongoClient.connect(MONGODB_URI, opts).then((client) => {
+    cached.promise = MongoClient.connect(MONGODB_URI!, opts).then((client) => {
       return {
         client,
-        db: client.db(MONGODB_DB),
+        db: client.db(MONGODB_DB!),
       }
     })
   }
